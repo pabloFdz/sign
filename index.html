@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="styles/fonts.css">
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+<body>
+	<div id="background"></div>
+	<div id="typed">
+		<p id="text-static" class="displayed-text"></p>
+	  	<!-- <marquee id="text-marquee" class="displayed-text" scrollamount="15" behavior="" direction="left">&nbsp;</marquee> 
+
+https://codepen.io/nodws/pen/WNjXbr
+
+https://codepen.io/lynnandtonic/pen/YzLmPrZ
+
+https://codepen.io/Ks145/pen/MWGxbYr
+
+https://codepen.io/abdullahturkmen/pen/vYJpzRv
+
+	  	-->
+	</div>
+
+	<div id="settings-container">
+		<img class="icon" src="img/edit.svg">
+		<input id="text-to-display" type="text">
+
+		<img id="font-magnify" onclick="fontBold()" src="img/bold.svg">
+		<img id="font-magnify" onclick="fontItalic()" src="img/italic.svg">		
+
+		<img id="font-color" src="img/colors.svg">
+		<input id="font-color-to-display" type="color">
+
+		<img id="background-color" src="img/background.svg">
+		<input id="background-color-to-display" type="color" value="#ffffff">
+
+		<img id="font-magnify" onclick="fontMagnify()" src="img/font-increase.svg">
+		<img id="font-reduce" onclick="fontReduce()" src="img/font-decrease.svg">
+		
+		<img id="enable-static" onclick="enableStatic()" src="img/static.svg">
+		<img id="enable-marquee" onclick="enableMarquee()" src="img/slide.svg">
+		
+		<img id="blink" onclick="toggleBlink()" src="img/blink.svg">		
+		<img id="blink" onclick="" src="img/textcolor.svg">
+
+		<select id="font-selector">
+			<option style="font-family: '14 Segment LED'" value="14 Segment LED">14 Segment LED</option>
+			<option style="font-family: 'Big Daddy LED TFB'" value="Big Daddy LED TFB">Big Daddy LED TFB</option>
+			<option style="font-family: 'enhanced_led_board-7'" value="enhanced_led_board-7">enhanced_led_board-7</option>
+			<option style="font-family: 'jd_led3'" value="jd_led3">jd_led3</option>
+			<option style="font-family: 'jd_led5'" value="jd_led5">jd_led5</option>
+			<option style="font-family: 'jd_led7'" value="jd_led7">jd_led7</option>
+			<option style="font-family: 'Led Bus'" value="Led Bus">Led Bus</option>
+			<option style="font-family: 'LED LCD 123'" value="LED LCD 123">LED LCD 123</option>
+			<option style="font-family: 'Led Panel Station Off'" value="Led Panel Station Off">Led Panel Station Off</option>
+			<option style="font-family: 'led_8x6'" value="led_8x6">led_8x6</option>
+			<option style="font-family: 'led_board-7'" value="led_board-7">led_board-7</option>
+			<option style="font-family: 'led_counter_plus_7_italic'" value="led_counter_plus_7_italic">led_counter_plus_7_italic</option>
+			<option style="font-family: 'led_counter_plus_7'" value="led_counter_plus_7">led_counter_plus_7</option>
+			<option style="font-family: 'led_counter-7_italic'" value="led_counter-7_italic">led_counter-7_italic</option>
+			<option style="font-family: 'led_counter-7'" value="led_counter-7">led_counter-7</option>
+			<option style="font-family: 'led_display-7'" value="led_display-7">led_display-7</option>
+			<option style="font-family: 'LEDBDREV'" value="LEDBDREV">LEDBDREV</option>
+			<option style="font-family: 'LEDBOARD'" value="LEDBOARD">LEDBOARD</option>
+			<option style="font-family: 'LEDCalculator'" value="LEDCalculator">LEDCalculator</option>
+			<option style="font-family: 'leders St'" value="leders St">leders St</option>
+			<option style="font-family: 'LediZ St'" value="LediZ St">LediZ St</option>
+			<option style="font-family: 'LEDSimulator'" value="LEDSimulator">LEDSimulator</option>
+			<option style="font-family: 'light_led_board-7'" value="light_led_board-7">light_led_board-7</option>
+			<option style="font-family: 'light_led_display-7'" value="light_led_display-7">light_led_display-7</option>
+			<option style="font-family: 'modern_led_board-7'" value="modern_led_board-7">modern_led_board-7</option>
+			<option style="font-family: 'NEONLEDLight'" value="NEONLEDLight">NEONLEDLight</option>
+			<option style="font-family: 'New Led Board tfb'" value="New Led Board tfb">New Led Board tfb</option>
+			<option style="font-family: 'NEW LED DISPLAY ST'" value="NEW LED DISPLAY ST">NEW LED DISPLAY ST</option>
+			<option style="font-family: 'rounded_led_board-7'" value="rounded_led_board-7">rounded_led_board-7</option>
+			<option style="font-family: 'RUNNING LED Regular'" value="RUNNING LED Regular">RUNNING LED Regular</option>
+			<option style="font-family: 'serif_led_board-7'" value="serif_led_board-7">serif_led_board-7</option>
+			<option style="font-family: 'TEXASLED'" value="TEXASLED">TEXASLED</option>
+			<option style="font-family: 'UltraLED St'" value="UltraLED St">UltraLED St</option>
+		</select>
+
+		<img id="hide-settings" onclick="" src="img/hide.svg">
+
+	</div>
+
+	<script type="text/javascript" src="js/main.js"></script>
+	<!-- https://uxwing.com/tag/editor-icons/ -->
+</body>
+</html>
