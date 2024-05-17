@@ -8,6 +8,12 @@ img {
 	width: 2%;
 	height: auto;
 }
+hr {
+	width: 1px;
+	height: 20px;
+	display: inline-block;
+	vertical-align: middle;
+}
 input[type="color"] {
 	visibility: hidden;
 	position: absolute;
@@ -15,10 +21,6 @@ input[type="color"] {
 }
 #settings-container img {
 	vertical-align: middle;
-	/*
-	border: 1px solid rgba(0, 0, 0, 0.5);
-	border-radius: 7px;
-	*/
 	padding: 3px;
 }
 #settings-container {
@@ -31,6 +33,8 @@ input[type="color"] {
 	bottom: 0;
 
 	padding: .5% 2%;
+
+	border-top: 1px solid
 }
 #text-to-display {
 	border: none;

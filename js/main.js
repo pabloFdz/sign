@@ -8,6 +8,7 @@ const inputFontColor = document.getElementById("font-color-to-display");
 const inputBackgroundColor = document.getElementById("background-color-to-display");
 
 const backgroundColor = document.getElementById("typed");
+const typed = document.getElementById("typed");
 
 const displayedText = document.querySelectorAll('.displayed-text');
 const colorPickerFont = document.getElementById('font-color');
@@ -119,7 +120,6 @@ function fontChangeSize() {
 	element.style.fontSize = fontSize + "%";
 }
 function fontChangeFamily() {
-	console.log("dssd")
 	if (slidingText) {
 		resetMarquee();
 		element = document.getElementById("text-marquee");
@@ -127,7 +127,6 @@ function fontChangeFamily() {
 	else {
 		element = textStatic;
 	}
-	
 	element.style.fontFamily = currentFont;
 }
 
@@ -147,14 +146,19 @@ function changeColor() {
 }
 
 
-
+let fontBodyClass;
 /* LISTENERS */
 textToDisplay.addEventListener("input",(event)=>{
 	display();
 });
 inputFontFamily.addEventListener("input",(event)=>{
 	currentFont = inputFontFamily.value;
-	fontChangeFamily();
+	fontBodyClass = inputFontFamily.options[inputFontFamily.selectedIndex].getAttribute('attr-font')
+	document.body.setAttribute("class", fontBodyClass);
+
+
+
+	//fontChangeFamily();
 });
 inputFontColor.addEventListener("input",(event)=>{
 	getFontColor();
