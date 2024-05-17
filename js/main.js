@@ -14,6 +14,9 @@ const displayedText = document.querySelectorAll('.displayed-text');
 const colorPickerFont = document.getElementById('font-color');
 const colorPickerBackground = document.getElementById('background-color');
 
+const settingsContainer = document.getElementById('settings-container');
+const hideSettings = document.getElementById('hide-settings');
+
 let currentFont = "Led Bus"
 let currentFontColor = "#000";
 let currentBackgroundColor = "#fff";
@@ -21,11 +24,12 @@ let currentBackgroundColor = "#fff";
 let fontSize = 700;
 let enableBlink = true;
 let blink = true;
+let settingsHidden = false;
 let element;
 
 let slidingText = false; // false Static | true Marquee
 
-
+/* Blink */
 let blinkInterval;
 
 function toggleBlink() {
@@ -145,6 +149,33 @@ function changeColor() {
 	backgroundColor.style.backgroundColor = currentBackgroundColor;
 }
 
+function invertColor(rgb) {
+	rgb = toRGB(rgb);
+    rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/); 
+
+    invertedR = rgb[1] * -1 + 255;
+	invertedG = rgb[2] * -1 + 255;
+	invertedB = rgb[3] * -1 + 255;
+
+	hideSettings.style.color = "rgb(" + invertedR + ", " + invertedG + ", " + invertedB + ")";
+} 
+const toRGB = (color) => {
+    const { style } = new Option();
+    style.color = color;
+    return style.color;
+}
+function hideSettingsBar() {
+	if (settingsHidden) {
+		invertColor(currentBackgroundColor);
+		settingsContainer.classList.remove("hidden");
+		settingsHidden = false;
+	}
+	else {
+		invertColor(currentBackgroundColor);
+		settingsContainer.classList.add("hidden");
+		settingsHidden = true;
+	}
+}
 
 let fontBodyClass;
 /* LISTENERS */
@@ -155,8 +186,6 @@ inputFontFamily.addEventListener("input",(event)=>{
 	currentFont = inputFontFamily.value;
 	fontBodyClass = inputFontFamily.options[inputFontFamily.selectedIndex].getAttribute('attr-font')
 	document.body.setAttribute("class", fontBodyClass);
-
-
 
 	//fontChangeFamily();
 });

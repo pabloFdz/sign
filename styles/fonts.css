@@ -129,6 +129,10 @@
 }
 
 
+body.arial #typed {font-family: "Arial";}
+body.timesnewroman #typed {font-family: "Times New Roman";}
+body.comicsans #typed {font-family: "Comic Sans MS";}
+
 body.font1 #typed {font-family: "14 Segment LED";}
 body.font2 #typed {font-family: "Big Daddy LED TFB";}
 body.font3 #typed {font-family: "enhanced_led_board-7";}

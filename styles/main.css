@@ -4,9 +4,12 @@ body {
 
 	margin: 0;
 }
-img {
+img, svg {
 	width: 2%;
 	height: auto;
+}
+svg {
+	color: initial;
 }
 hr {
 	width: 1px;
@@ -19,7 +22,7 @@ input[type="color"] {
 	position: absolute;
 	margin-left: -5%;
 }
-#settings-container img {
+#settings-container img, #settings-container svg {
 	vertical-align: middle;
 	padding: 3px;
 }
@@ -35,6 +38,14 @@ input[type="color"] {
 	padding: .5% 2%;
 
 	border-top: 1px solid
+}
+#settings-container.hidden {
+	border-top: none;
+}
+#settings-container.hidden >:not(#hide-settings) {
+	visibility: hidden;
+	opacity: 0;
+	border: none;
 }
 #text-to-display {
 	border: none;
