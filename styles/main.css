@@ -7,6 +7,7 @@ body {
 img, svg {
 	width: 2%;
 	height: auto;
+	min-height: 30px
 }
 svg {
 	color: initial;
@@ -30,6 +31,7 @@ input[type="color"] {
 	padding: 3px;
 }
 #settings-container {
+	display: flex;
 	position: fixed;
 
 	width: 100%;
@@ -51,6 +53,8 @@ input[type="color"] {
 	border: none;
 }
 #text-to-display {
+	width: 10%;
+
 	border: none;
     border-bottom: 1px solid;
 }

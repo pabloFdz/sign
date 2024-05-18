@@ -7,6 +7,7 @@ const inputFontFamily = document.getElementById("font-selector");
 const inputFontColor = document.getElementById("font-color-to-display");
 const inputBackgroundColor = document.getElementById("background-color-to-display");
 
+const body = document.body;
 const backgroundColor = document.getElementById("typed");
 const typed = document.getElementById("typed");
 
@@ -45,12 +46,12 @@ function toggleBlink() {
 }
 function startBlink() {
     if (blink) {
-        backgroundColor.style.backgroundColor = currentBackgroundColor;
+        body = currentBackgroundColor;
         element.style.color = currentFontColor;
         blink = false;
     }
     else {
-       	backgroundColor.style.backgroundColor = currentFontColor;
+       	body = currentFontColor;
        	element.style.color = currentBackgroundColor;
         blink = true;
     }
@@ -146,7 +147,7 @@ function getBackgroundColor() {
 function changeColor() {
 	chooseElement();
 	element.style.color = currentFontColor;
-	backgroundColor.style.backgroundColor = currentBackgroundColor;
+	body.style.backgroundColor = currentBackgroundColor;
 }
 
 function invertColor(rgb) {
