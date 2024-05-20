@@ -17,38 +17,50 @@ hr {
 	height: 20px;
 	display: inline-block;
 	vertical-align: middle;
+	margin: 1% 2%;
 }
 input[type="color"] {
 	visibility: hidden;
 	position: absolute;
 	margin-left: -5%;
 }
-#settings-container img, #settings-container svg {
+.settings-container img, .settings-container svg {
 	vertical-align: middle;
 	padding: 3px;
 }
-#settings-container {
+#settings-top {
+	top: 0;
+	border-bottom: 1px solid
+}
+#settings-bottom {
+	bottom: 0;
+	border-top: 1px solid
+}
+.settings-container {
 	display: flex;
+	justify-content: flex-start;
 	position: fixed;
 
 	width: 100%;
 	background: rgba(255, 255, 255, 0.5);
 
 	left: 0;
-	bottom: 0;
 
 	padding: .5% 2%;
 
-	border-top: 1px solid
+	z-index: 100;
 }
-#settings-container.hidden {
-	border-top: none;
+.settings-container.hidden {
+	border: none !important;
 	background-color: transparent;
 }
-#settings-container.hidden >:not(#hide-settings) {
+.settings-container.hidden >:not(#hide-settings) {
 	visibility: hidden;
 	opacity: 0;
 	border: none;
+}
+.settings-container > :last-child{
+	margin-right: 5%;
 }
 #text-to-display {
 	width: 10%;

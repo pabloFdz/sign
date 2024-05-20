@@ -7,15 +7,15 @@ const inputFontFamily = document.getElementById("font-selector");
 const inputFontColor = document.getElementById("font-color-to-display");
 const inputBackgroundColor = document.getElementById("background-color-to-display");
 
-const body = document.body;
-const backgroundColor = document.getElementById("typed");
+let body = document.body;
 const typed = document.getElementById("typed");
 
 const displayedText = document.querySelectorAll('.displayed-text');
 const colorPickerFont = document.getElementById('font-color');
 const colorPickerBackground = document.getElementById('background-color');
 
-const settingsContainer = document.getElementById('settings-container');
+const settingsTop = document.getElementById('settings-top');
+const settingsBottom = document.getElementById('settings-bottom');
 const hideSettings = document.getElementById('hide-settings');
 
 let currentFont = "Led Bus"
@@ -26,13 +26,42 @@ let fontSize = 700;
 let enableBlink = true;
 let blink = true;
 let settingsHidden = false;
-let element;
+let element = textStatic;
 
 let slidingText = false; // false Static | true Marquee
 
+function chooseElement() {
+	if (slidingText) {
+		element = document.getElementById("text-marquee");
+	}
+	else {
+		element = textStatic;
+	}
+}
 /* Blink */
 let blinkInterval;
 
+function toggleBlinkText() {
+	if (enableBlink) {
+		enableBlink = false;
+		blinkInterval = setInterval(startBlinkText, 200);
+	}
+	else {
+		enableBlink = true;
+		clearInterval(blinkInterval);
+		changeColor();
+	}
+}
+function startBlinkText() {
+    if (blink) {
+        element.style.color = currentFontColor;
+        blink = false;
+    }
+    else {
+       	element.style.color = currentBackgroundColor;
+        blink = true;
+    }
+}
 function toggleBlink() {
 	if (enableBlink) {
 		enableBlink = false;
@@ -46,28 +75,18 @@ function toggleBlink() {
 }
 function startBlink() {
     if (blink) {
-        body = currentBackgroundColor;
+    	body.style.backgroundColor = currentBackgroundColor;
         element.style.color = currentFontColor;
         blink = false;
     }
     else {
-       	body = currentFontColor;
+       	body.style.backgroundColor = currentFontColor;
        	element.style.color = currentBackgroundColor;
         blink = true;
     }
 }
 
 
-
-
-function chooseElement() {
-	if (slidingText) {
-		element = document.getElementById("text-marquee");
-	}
-	else {
-		element = textStatic;
-	}
-}
 /* Text */
 function display() {
 	chooseElement();
@@ -95,7 +114,7 @@ function addMarquee() {
 	marquee.style.display = "block";
 	marquee.style.color = currentFontColor;
 	marquee.innerHTML = textToDisplay.value;
-	backgroundColor.appendChild(marquee);
+	typed.appendChild(marquee);
 
 	slidingText = true;
 }
@@ -168,12 +187,15 @@ const toRGB = (color) => {
 function hideSettingsBar() {
 	if (settingsHidden) {
 		invertColor(currentBackgroundColor);
-		settingsContainer.classList.remove("hidden");
+		settingsTop.classList.remove("hidden");
+		settingsBottom.classList.remove("hidden");
 		settingsHidden = false;
+		hideSettings.style.color = "initial";
 	}
 	else {
 		invertColor(currentBackgroundColor);
-		settingsContainer.classList.add("hidden");
+		settingsTop.classList.add("hidden");
+		settingsBottom.classList.add("hidden");
 		settingsHidden = true;
 	}
 }
