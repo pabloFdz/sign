@@ -1,18 +1,29 @@
 //let buttonDisplay = document.getElementById("display");
 const textToDisplay = document.getElementById("text-to-display");
 const textStatic = document.getElementById("text-static");
+const textNeon = document.getElementById("text-neon");
 let textMarquee = document.getElementById("text-marquee");
 
-const inputFontFamily = document.getElementById("font-selector");
+const changeFontFamilyContainer = document.getElementById("font-selector-container");
+const fontsFamily = document.querySelectorAll('[attr-font]');
 const inputFontColor = document.getElementById("font-color-to-display");
 const inputBackgroundColor = document.getElementById("background-color-to-display");
+const blurryBackground = document.getElementById("font-selector-blur");
+
+const iconTextStatic = document.getElementById("enable-static");
+const iconTextMarquee = document.getElementById("enable-marquee");
+const iconBlinkText = document.getElementById("blink");
+const iconBlinkFull = document.getElementById("blink-full");
+const iconFontFamily = document.getElementById("font-selector");
 
 let body = document.body;
 const typed = document.getElementById("typed");
 
-const displayedText = document.querySelectorAll('.displayed-text');
-const colorPickerFont = document.getElementById('font-color');
-const colorPickerBackground = document.getElementById('background-color');
+/*const displayedText = document.querySelectorAll('.displayed-text');*/
+const iconColorPickerFont = document.getElementById('font-color');
+const iconColorPickerBackground = document.getElementById('background-color');
+const iconExtrasTv = document.getElementById('extras-tv');
+const iconExtrasNeon = document.getElementById('extras-neon');
 
 const settingsTop = document.getElementById('settings-top');
 const settingsBottom = document.getElementById('settings-bottom');
@@ -28,16 +39,15 @@ let blink = true;
 let settingsHidden = false;
 let element = textStatic;
 
-let slidingText = false; // false Static | true Marquee
 
-function chooseElement() {
-	if (slidingText) {
-		element = document.getElementById("text-marquee");
-	}
-	else {
-		element = textStatic;
-	}
+let slidingText = false; // false Static | true Marquee
+function chooseElement(element) {
+	element = document.getElementById(element);
 }
+
+
+
+
 /* Blink */
 let blinkInterval;
 
@@ -45,12 +55,15 @@ function toggleBlinkText() {
 	if (enableBlink) {
 		enableBlink = false;
 		blinkInterval = setInterval(startBlinkText, 200);
+		iconBlinkFull.setAttribute("onclick", "");
 	}
 	else {
 		enableBlink = true;
 		clearInterval(blinkInterval);
 		changeColor();
+		iconBlinkFull.setAttribute("onclick", "toggleBlinkFull()");
 	}
+	highlightSelectedIcon(iconBlinkText);
 }
 function startBlinkText() {
     if (blink) {
@@ -62,18 +75,22 @@ function startBlinkText() {
         blink = true;
     }
 }
-function toggleBlink() {
+
+function toggleBlinkFull() {
 	if (enableBlink) {
 		enableBlink = false;
-		blinkInterval = setInterval(startBlink, 200);
+		blinkInterval = setInterval(startBlinkFull, 200);
+		iconBlinkText.setAttribute("onclick", "");
 	}
 	else {
 		enableBlink = true;
 		clearInterval(blinkInterval);
 		changeColor();
+		iconBlinkText.setAttribute("onclick", "toggleBlinkText()");
 	}
+	highlightSelectedIcon(iconBlinkFull);
 }
-function startBlink() {
+function startBlinkFull() {
     if (blink) {
     	body.style.backgroundColor = currentBackgroundColor;
         element.style.color = currentFontColor;
@@ -88,22 +105,26 @@ function startBlink() {
 
 
 /* Text */
-function display() {
-	chooseElement();
+function display(element) {
+	chooseElement(element);
 
 	element.innerHTML = textToDisplay.value;
-	
+
 	getFontColor();
 	getBackgroundColor();
 }
 function enableStatic() {
-	document.getElementById("text-marquee").remove();
-	textStatic.style.display = "block";
+	if (document.getElementById("text-marquee") != null) {
+	  document.getElementById("text-marquee").remove();
+	  textStatic.style.display = "block";
+	  iconTextStatic.classList.add("stopped");
+	  iconTextMarquee.classList.remove("playing");
+	}
 }
 function enableMarquee() {
 	textStatic.style.display = "none";
 	addMarquee();
-	display();
+	display("text-marquee");
 }
 function addMarquee() {
 	let marquee = document.createElement("marquee");
@@ -117,6 +138,8 @@ function addMarquee() {
 	typed.appendChild(marquee);
 
 	slidingText = true;
+	iconTextStatic.classList.remove("stopped");
+	iconTextMarquee.classList.add("playing");
 }
 function resetMarquee() {
 	document.getElementById("text-marquee").remove();
@@ -129,6 +152,7 @@ function fontMagnify() {
 	fontChangeSize();
 }
 function fontReduce() {
+	if (fontSize === 100) return;
 	fontSize -= 100;
 	fontChangeSize();
 }
@@ -143,15 +167,18 @@ function fontChangeSize() {
 	
 	element.style.fontSize = fontSize + "%";
 }
-function fontChangeFamily() {
-	if (slidingText) {
-		resetMarquee();
-		element = document.getElementById("text-marquee");
+function fontFamilyChange() {
+	if (changeFontFamilyContainer.style.display === "none") {
+		changeFontFamilyContainer.style.display = "block";
+		blurryBackground.style.display = "block";
 	}
 	else {
-		element = textStatic;
+		changeFontFamilyContainer.style.display = "none";
+		blurryBackground.style.display = "none";
 	}
-	element.style.fontFamily = currentFont;
+
+	highlightSelectedIcon(iconFontFamily);
+	
 }
 
 /* Colors */
@@ -166,7 +193,10 @@ function getBackgroundColor() {
 function changeColor() {
 	chooseElement();
 	element.style.color = currentFontColor;
+	iconColorPickerFont.style.color = currentFontColor;
+	
 	body.style.backgroundColor = currentBackgroundColor;
+	//iconColorPickerBackground.style.backgroundColor = currentBackgroundColor;
 }
 
 function invertColor(rgb) {
@@ -203,25 +233,27 @@ function hideSettingsBar() {
 let fontBodyClass;
 /* LISTENERS */
 textToDisplay.addEventListener("input",(event)=>{
-	display();
+	display(element);
 });
-inputFontFamily.addEventListener("input",(event)=>{
-	currentFont = inputFontFamily.value;
-	fontBodyClass = inputFontFamily.options[inputFontFamily.selectedIndex].getAttribute('attr-font')
-	document.body.setAttribute("class", fontBodyClass);
+fontsFamily.forEach((fontFamilyOption) => {
+	fontFamilyOption.addEventListener("click",(event)=>{
+		fontBodyClass = fontFamilyOption.getAttribute('attr-font');
+		document.body.setAttribute("class", fontBodyClass);
 
-	//fontChangeFamily();
+		fontFamilyChange();
+	});
 });
+
 inputFontColor.addEventListener("input",(event)=>{
 	getFontColor();
 });
 inputBackgroundColor.addEventListener("input",(event)=>{
 	getBackgroundColor();
 });
-colorPickerFont.addEventListener("click",(event)=>{
+iconColorPickerFont.addEventListener("click",(event)=>{
 	document.getElementById('font-color-to-display').click();
 });
-colorPickerBackground.addEventListener("click",(event)=>{
+iconColorPickerBackground.addEventListener("click",(event)=>{
 	document.getElementById('background-color-to-display').click();
 });
 

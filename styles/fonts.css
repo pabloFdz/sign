@@ -1,4 +1,34 @@
 @font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/materialui.woff2') format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+@font-face {
+  font-family: "Vibur";
+  src: url('fnt/Vibur-Regular.ttf');
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url('fonts/OpenSans.ttf');
+}
+@font-face {
   font-family: "14 Segment LED";
   src: url('fonts/14 Segment LED.ttf');
 }
@@ -129,32 +159,32 @@
 }
 
 
-body.arial #typed {font-family: "Arial";}
-body.timesnewroman #typed {font-family: "Times New Roman";}
-body.comicsans #typed {font-family: "Comic Sans MS";}
+.arial, body.arial #typed {font-family: "Arial";}
+.timenewroman, body.timesnewroman #typed {font-family: "Times New Roman";}
+.comicsans, body.comicsans #typed {font-family: "Comic Sans MS";}
 
-body.font2 #typed {font-family: "Big Daddy LED TFB";}
-body.font3 #typed {font-family: "enhanced_led_board-7";}
-body.font4 #typed {font-family: "jd_led5";}
-body.font7 #typed {font-family: "LED LCD 123";}
-body.font9 #typed {font-family: "led_8x6";}
-body.font10 #typed {font-family: "led_board-7";}
-body.font12 #typed {font-family: "led_counter_plus_7";}
-body.font14 #typed {font-family: "led_counter-7";}
-body.font15 #typed {font-family: "led_display-7";}
-body.font16 #typed {font-family: "LEDBDREV";}
-body.font18 #typed {font-family: "LEDCalculator";}
-body.font19 #typed {font-family: "leders St";}
-body.font20 #typed {font-family: "LediZ St";}
-body.font22 #typed {font-family: "light_led_board-7";}
-body.font23 #typed {font-family: "light_led_display-7";}
-body.font24 #typed {font-family: "modern_led_board-7";}
-body.font25 #typed {font-family: "NEONLEDLight";}
-body.font26 #typed {font-family: "New Led Board tfb";}
-body.font27 #typed {font-family: "NEW LED DISPLAY ST";}
-body.font28 #typed {font-family: "rounded_led_board-7";}
-body.font29 #typed {font-family: "RUNNING LED Regular";}
-body.font30 #typed {font-family: "serif_led_board-7";}
+.font2, body.font2 #typed {font-family: "Big Daddy LED TFB";}
+.font3, body.font3 #typed {font-family: "enhanced_led_board-7";}
+.font4, body.font4 #typed {font-family: "jd_led5";}
+.font7, body.font7 #typed {font-family: "LED LCD 123";}
+.font9, body.font9 #typed {font-family: "led_8x6";}
+.font10, body.font10 #typed {font-family: "led_board-7";}
+.font12, body.font12 #typed {font-family: "led_counter_plus_7";}
+.font14, body.font14 #typed {font-family: "led_counter-7";}
+.font15, body.font15 #typed {font-family: "led_display-7";}
+.font16, body.font16 #typed {font-family: "LEDBDREV";}
+.font18, body.font18 #typed {font-family: "LEDCalculator";}
+.font19, body.font19 #typed {font-family: "leders St";}
+.font20, body.font20 #typed {font-family: "LediZ St";}
+.font22, body.font22 #typed {font-family: "light_led_board-7";}
+.font23, body.font23 #typed {font-family: "light_led_display-7";}
+.font24, body.font24 #typed {font-family: "modern_led_board-7";}
+.font25, body.font25 #typed {font-family: "NEONLEDLight";}
+.font26, body.font26 #typed {font-family: "New Led Board tfb";}
+.font27, body.font27 #typed {font-family: "NEW LED DISPLAY ST";}
+.font28, body.font28 #typed {font-family: "rounded_led_board-7";}
+.font29, body.font29 #typed {font-family: "RUNNING LED Regular";}
+.font30, body.font30 #typed {font-family: "serif_led_board-7";}
 
 
 
