@@ -15,6 +15,7 @@ function extras(type) {
 	  	break;
 	  case GLOW3D:
 	  	extrasGlow3D();
+	  	break;
 	  case CANDLE:
 	  	extrasCandle();
 	  	break;
