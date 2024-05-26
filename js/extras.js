@@ -83,10 +83,11 @@ function extrasCandle() {
 	let candle = document.getElementById("extras-candle-container");
 
 	if (candle.style.display === "none") {
-		candle.style.display = "block"
+		enableStatic();
+		candle.style.display = "block";
 	}
 	else {
-		candle.style.display = "none"	
+		candle.style.display = "none";
 	}
 	
 	highlightSelectedIcon(iconExtrasCandle);

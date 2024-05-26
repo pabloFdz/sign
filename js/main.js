@@ -23,6 +23,7 @@ const typed = document.getElementById("typed");
 /*const displayedText = document.querySelectorAll('.displayed-text');*/
 const iconColorPickerFont = document.getElementById('font-color');
 const iconColorPickerBackground = document.getElementById('background-color');
+
 const iconExtrasTv = document.getElementById('extras-tv');
 const iconExtrasNeon = document.getElementById('extras-neon');
 const iconExtrasGlow3D = document.getElementById('extras-glow3d');
