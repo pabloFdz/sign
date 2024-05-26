@@ -2,6 +2,7 @@
 const textToDisplay = document.getElementById("text-to-display");
 const textStatic = document.getElementById("text-static");
 const textNeon = document.getElementById("text-neon");
+const textGlow3D = document.getElementById("text-glow3d");
 let textMarquee = document.getElementById("text-marquee");
 
 const changeFontFamilyContainer = document.getElementById("font-selector-container");
@@ -24,6 +25,8 @@ const iconColorPickerFont = document.getElementById('font-color');
 const iconColorPickerBackground = document.getElementById('background-color');
 const iconExtrasTv = document.getElementById('extras-tv');
 const iconExtrasNeon = document.getElementById('extras-neon');
+const iconExtrasGlow3D = document.getElementById('extras-glow3d');
+const iconExtrasCandle = document.getElementById('extras-candle');
 
 const settingsTop = document.getElementById('settings-top');
 const settingsBottom = document.getElementById('settings-bottom');
@@ -41,11 +44,6 @@ let element = textStatic;
 
 
 let slidingText = false; // false Static | true Marquee
-function chooseElement(element) {
-	element = document.getElementById(element);
-}
-
-
 
 
 /* Blink */
@@ -122,9 +120,16 @@ function enableStatic() {
 	}
 }
 function enableMarquee() {
+	bodyClass="extras-neon";
+	if (body.classList.contains(bodyClass)) {
+		body.classList.remove(bodyClass);
+		extrasNeonDisable();
+	}
+
 	textStatic.style.display = "none";
 	addMarquee();
 	display("text-marquee");
+	chooseElement("text-marquee");
 }
 function addMarquee() {
 	let marquee = document.createElement("marquee");
@@ -157,15 +162,18 @@ function fontReduce() {
 	fontChangeSize();
 }
 function fontChangeSize() {
-	if (slidingText) {
-		resetMarquee();
-		element = document.getElementById("text-marquee");
+	// if (slidingText) {
+	// 	resetMarquee();
+	// 	element = document.getElementById("text-marquee");
+	// }
+	// else {
+	// 	element = textStatic;
+	// }
+
+	const displayedTexts = document.getElementsByClassName("displayed-text");
+	for (let i = 0; i < displayedTexts.length; i++) {
+	  displayedTexts[i].style.fontSize = fontSize + "%";
 	}
-	else {
-		element = textStatic;
-	}
-	
-	element.style.fontSize = fontSize + "%";
 }
 function fontFamilyChange() {
 	if (changeFontFamilyContainer.style.display === "none") {
@@ -194,6 +202,11 @@ function changeColor() {
 	chooseElement();
 	element.style.color = currentFontColor;
 	iconColorPickerFont.style.color = currentFontColor;
+
+	const displayedTexts = document.getElementsByClassName("display-text");
+	for (let i = 0; i < displayedTexts.length; i++) {
+	  displayedTexts[i].style.color = currentFontColor;
+	}
 	
 	body.style.backgroundColor = currentBackgroundColor;
 	//iconColorPickerBackground.style.backgroundColor = currentBackgroundColor;
@@ -234,6 +247,10 @@ let fontBodyClass;
 /* LISTENERS */
 textToDisplay.addEventListener("input",(event)=>{
 	display(element);
+	const displayedTexts = document.getElementsByClassName("display-text");
+	for (let i = 0; i < displayedTexts.length; i++) {
+	  displayedTexts[i].innerHTML = textToDisplay.value;
+	}
 });
 fontsFamily.forEach((fontFamilyOption) => {
 	fontFamilyOption.addEventListener("click",(event)=>{
