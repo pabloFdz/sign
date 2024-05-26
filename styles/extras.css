@@ -312,8 +312,7 @@ body.extras-sky .displayed-text {
    background: linear-gradient(#16161d, #1f1f3a, #3b2f4a);
    overflow: hidden;
 }
-}
-#extras-sky-container .stars-wrapper svg.stars {
+.stars {
    position: absolute;
    top: 0;
    left: 0;
