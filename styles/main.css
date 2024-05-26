@@ -20,17 +20,7 @@ img {
 	width: auto;
 	height: 100%;
 }
-svg {
-	width: 50%;
-	height: auto;
-}
 
-svg#hide-settings {
-	position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 .image-container {
 	width: var(--image-size);
 	height: var(--image-size);
@@ -42,9 +32,6 @@ svg#hide-settings {
 	max-height: 70px;
 }
 
-svg {
-	color: initial;
-}
 hr {
 	width: 1px;
 	height: 20px;

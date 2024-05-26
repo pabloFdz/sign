@@ -20,3 +20,13 @@ function removeHighlightedIcon(element) {
 function chooseElement(element) {
 	element = document.getElementById(element);
 }
+
+const rgbToHue = (r,g,b) => Math.round(
+  Math.atan2(
+    Math.sqrt(3) * (g - b),
+    2 * r - g - b,
+  ) * 180 / Math.PI
+);
+
+
+

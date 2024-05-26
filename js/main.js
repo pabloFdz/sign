@@ -28,6 +28,8 @@ const iconExtrasTv = document.getElementById('extras-tv');
 const iconExtrasNeon = document.getElementById('extras-neon');
 const iconExtrasGlow3D = document.getElementById('extras-glow3d');
 const iconExtrasCandle = document.getElementById('extras-candle');
+const iconExtrasSparks = document.getElementById('extras-sparks');
+const iconExtrasSky = document.getElementById('extras-sky');
 
 const settingsTop = document.getElementById('settings-top');
 const settingsBottom = document.getElementById('settings-bottom');
@@ -193,6 +195,9 @@ function fontFamilyChange() {
 /* Colors */
 function getFontColor() {
 	currentFontColor = inputFontColor.value;
+	rgb = toRGB(currentFontColor);
+	rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/); 
+	console.log(rgbToHue(parseInt(rgb[1]), parseInt(rgb[2]), parseInt(rgb[3])))
 	changeColor();
 }
 function getBackgroundColor() {

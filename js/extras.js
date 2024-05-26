@@ -2,6 +2,8 @@ const TV = "tv";
 const NEON = "neon";
 const GLOW3D = "glow3d";
 const CANDLE = "candle";
+const SPARKS = "sparks";
+const SKY = "sky";
 
 let statusNeon = false;
 
@@ -18,6 +20,12 @@ function extras(type) {
 	  	break;
 	  case CANDLE:
 	  	extrasCandle();
+	  	break;
+	  case SPARKS:
+	  	extrasSparks();
+	  	break;
+	  case SKY:
+	  	extrasSky();
 	  	break;
 	  default:
 	    break;
@@ -92,6 +100,38 @@ function extrasCandle() {
 	}
 	
 	highlightSelectedIcon(iconExtrasCandle);
+}
+//////////////
+function extrasSparks() {
+	let sparks = document.getElementById("extras-sparks-container");
+
+	if (sparks.style.display === "none") {
+		enableStatic();
+		sparks.style.display = "block";
+		sparksObject.createSparks();
+	}
+	else {
+		sparks.style.display = "none";
+		sparksObject.destroySparks();
+	}
+	
+	highlightSelectedIcon(iconExtrasSparks);
+}
+//////////////
+function extrasSky() {	
+	let bodyClass = "extras-sky";
+	let sky = document.getElementById("extras-sky-container");
+
+	if (body.classList.contains(bodyClass)) {
+		body.classList.remove(bodyClass);
+		sky.style.display = "none";
+	}
+	else {
+		body.classList.add(bodyClass);
+		sky.style.display = "block";
+	}
+	
+	highlightSelectedIcon(iconExtrasSky);
 }
 
 
