@@ -6,16 +6,43 @@
 	<link rel="stylesheet" type="text/css" href="styles/fonts.css">
 	<link rel="stylesheet" type="text/css" href="styles/main.css">
 	<link rel="stylesheet" type="text/css" href="styles/extras.css">
+	<link rel="stylesheet" type="text/css" href="styles/tabs.css">
 	<link rel="stylesheet" type="text/css" href="styles/colorpicker.css">
 	
 	
 </head>
 <body class="arial">
-	<div id="settings" style="display: none">
+	<div id="main-settings" class="purple" style="display: none">
 		<input type="text" placeholder="Type here..." value="Hello! 🧡💜">
 		<span id="enable-static" onclick="enableStatic()" class="stopped material-icons">stop_circle</span>
 		<span id="enable-marquee" onclick="enableMarquee()" class="material-icons">play_circle</span>
 
+		<div class="tab-nav-container-background">
+			<div class="tab">
+				<span class="stopped material-icons">edit_note</span>
+				<p>Text</p>
+			</div>
+		</div>
+		<div class="tab-nav-container">
+		    <div class="tab active purple" data-color="purple">
+		        <span class="stopped material-icons">edit_note</span>
+		        <p>Text</p>
+		    </div>
+		    <div class="tab pink" data-color="pink">
+		        <span class="stopped material-icons">blur_on</span>
+		        <p>Effects</p>
+		    </div>
+		    <div class="tab yellow" data-color="yellow">
+		        <span class="stopped material-icons">wallpaper</span>
+		        <p>Background</p>
+		    </div>
+		    <div class="tab teal" data-color="teal">
+		        <span class="stopped material-icons">stop_circle</span>
+		        <p>Profile</p>
+		    </div>
+		</div>
+		
+		
 	</div>
 
 	<div id="settings-top" class="settings-container">
@@ -35,8 +62,9 @@
 			traffic
 		 -->
 		<span id="blink" onclick="toggleBlinkText()" class="material-icons">generating_tokens</span>
+		<!-- wb_iridescent -->
 		<span id="blink-full" onclick="toggleBlinkFull()" class="material-icons">exposure</span>
-
+		<!-- contrast -->
 		<hr>
 
 		<span id="extras-tv" onclick="extras('tv')" class="material-icons">tv</span>
@@ -174,6 +202,8 @@
 		<div class="hide-settings image-container">
 			<span id="hide-settings" onclick="hideSettingsBar()" class="material-icons">visibility_off</span>
 		</div>
+
+		<span id="icon-main-settings" onclick="toggleMainSettings()" class="material-icons">tune</span>
 
 		<hr>
 
@@ -319,10 +349,11 @@
 
 	<script type="text/javascript" src="js/utils.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/tabs.js"></script>
 	<script type="text/javascript" src="js/colorpicker.js"></script>
 	<script type="text/javascript" src="js/extras.js"></script>
 	<script type="text/javascript" src="js/extras_sparks.js"></script>
-	<script type="text/javascript" src="js/extras_neonmatrix.js"></script>
+	<!-- <script type="text/javascript" src="js/extras_neonmatrix.js"></script> -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.3.0/tinycolor.min.js"></script>
 	<link src="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 

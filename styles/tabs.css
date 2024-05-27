@@ -1,0 +1,129 @@
+body {
+  background: rgba(91, 55, 183, 1);
+  font-family: 'Lato', sans-serif;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: background 0.4s linear;
+
+  text-align: center;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.tab-nav-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  /*justify-content: space-between;*/
+  background: rgba(255, 255, 255, 0.4);
+  padding: 20px 0;
+  width: 100%;
+}
+.tab-nav-container-background {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20px 0;
+  width: 100%;
+}
+.tab-nav-container-background .tab {
+  visibility: hidden;
+}
+
+#main-settings.purple {
+    box-shadow: 0 4px 12px rgb(91, 55, 183);
+}
+
+#main-settings.pink {
+    box-shadow: 0 4px 12px rgb(201, 55, 157);
+}
+
+#main-settings.yellow {
+    box-shadow: 0 4px 12px rgb(230, 169, 25);
+}
+
+#main-settings.teal {
+    box-shadow: 0 4px 12px rgb(28, 150, 162);
+}
+#main-settings.purple .tab-nav-container-background {
+    background: rgb(91, 55, 183);
+}
+
+#main-settings.pink .tab-nav-container-background {
+    background: rgb(201, 55, 157);
+}
+
+#main-settings.yellow .tab-nav-container-background {
+    background: rgb(230, 169, 25);
+}
+
+#main-settings.teal .tab-nav-container-background {
+    background: rgb(28, 150, 162);
+}
+
+.tab {
+  color: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  margin: 0 5px;
+  transition: background 0.4s linear;
+}
+
+.tab i {
+    font-size: 1.2em;
+}
+
+.tab p {
+    font-weight: bold;
+    overflow: hidden;
+    max-width: 0;
+}
+
+.tab.active p {
+    margin-left: 10px;
+    max-width: 200px;
+    transition: max-width 0.4s linear;
+}
+
+.tab.active.purple {
+    background-color: rgba(91, 55, 183, 0.5);
+    color: white;
+}
+
+.tab.active.pink {
+    background-color: rgba(201, 55, 157, 0.5);
+    color: white;
+}
+
+.tab.active.yellow {
+    background-color: rgba(230, 169, 25, 0.5);
+    color: white;
+}
+
+.tab.active.teal {
+    background-color: rgba(28, 150, 162, 0.5);
+    color: white;
+}
+
+@media (max-width: 450px) {
+    .tab-nav-container, .tab-nav-container-background {
+        padding: 10px 0;
+    }
+
+    .tab {
+        padding: 0 10px;
+    }
+
+    .tab i {
+        font-size: 1em;
+    }
+}

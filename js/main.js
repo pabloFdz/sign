@@ -1,4 +1,5 @@
 //let buttonDisplay = document.getElementById("display");
+const mainSettings = document.getElementById("main-settings");
 const textToDisplay = document.getElementById("text-to-display");
 const textStatic = document.getElementById("text-static");
 const textNeon = document.getElementById("text-neon");
@@ -11,6 +12,7 @@ const inputFontColor = document.getElementById("font-color-to-display");
 const inputBackgroundColor = document.getElementById("background-color-to-display");
 const blurryBackground = document.getElementById("font-selector-blur");
 
+const iconMainSettings = document.getElementById("icon-main-settings");
 const iconTextStatic = document.getElementById("enable-static");
 const iconTextMarquee = document.getElementById("enable-marquee");
 const iconBlinkText = document.getElementById("blink");
@@ -52,6 +54,16 @@ let element = textStatic;
 
 let slidingText = false; // false Static | true Marquee
 
+function toggleMainSettings() {
+	if (mainSettings.style.display === "none") {
+		mainSettings.style.display = "block";
+		blurryBackground.style.display = "block";
+	}
+	else {
+		mainSettings.style.display = "none";
+		blurryBackground.style.display = "none";
+	}
+}
 
 /* Blink */
 let blinkInterval;

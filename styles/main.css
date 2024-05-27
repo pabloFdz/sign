@@ -80,7 +80,7 @@ span.selected {
 	animation-name: changewidth;
 	animation-iteration-count: infinite;*/
 }
-#settings {
+#main-settings {
 	position: absolute;
 
 	display: flex;
