@@ -43,10 +43,10 @@ input[type="color"] {
 .settings-container img, .settings-container svg {
 	vertical-align: middle;
 }
-.material-icons {
+.settings-container .material-icons {
 	color: #8B949A;
 }
-span.material-icons {
+.settings-container span.material-icons {
 	margin: 5px;
 	padding: 0 6px;
 
@@ -76,11 +76,37 @@ span{
 span.selected {
 	color: var(--main);
 
-	animation-duration: 1.7s;
+	/*animation-duration: 1.7s;
 	animation-name: changewidth;
-	animation-iteration-count: infinite;
+	animation-iteration-count: infinite;*/
 }
+#settings {
+	position: absolute;
 
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+
+	width: 70%;
+	height: 400px;
+
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+
+	color: var(--text);
+
+	padding: .5% 2%;
+
+	z-index: 10;
+
+	background: #1F232A;
+	border: 2px solid #364347;
+	
+	border-radius: 8px;
+	
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
 #settings-top {
 	top: 0;
 	border-top: 0;
@@ -128,11 +154,6 @@ span.selected {
 .settings-container > :last-child{
 	margin-right: 5%;
 }
-#font-selector-container {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-}
 #font-selector-blur {
 	position: absolute;
 	width: 100%;
@@ -149,9 +170,7 @@ span.selected {
     width: auto;
     height: 50%;
 
-    background: #fff;
-    color: var(--text);
-    box-shadow: inset 0px 0px 0px 0px var(--glow-color), 0px -1px 4px 0px var(--glow-color);
+    color: #8B949A;
 
     overflow: auto;
     margin: 0 auto;
@@ -160,6 +179,13 @@ span.selected {
 
     border-radius: 7px;
     border: 1px solid var(--text);
+
+    background: #1F232A;
+    border-radius: 8px;
+    border: 2px solid #364347;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+    z-index: 100;
 }
 #text-to-display {
 	width: 10%;

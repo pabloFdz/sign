@@ -27,7 +27,9 @@ var hexField = document.getElementById('hex-field');
 var red = document.getElementById('red');
 var blue = document.getElementById('blue');
 var green = document.getElementById('green');
-var hex = document.getElementById('hex'); 
+var hex = document.getElementById('hex');
+
+let elementToChange = ""; 
 
 function ColorPicker(){
   this.addDefaultSwatches();
@@ -155,8 +157,20 @@ function setCurrentColor(color){
   color = tinycolor(color);
   currentColor = color;
   colorIndicator.style.backgroundColor = color;
-  document.body.style.backgroundColor = color;
-  currentBackgroundColor = color; //pablo
+  //document.body.style.backgroundColor = color;
+
+  if (elementToChange === "font") {
+    currentFontColor = color;
+    const displayedTexts = document.getElementsByClassName("displayed-text");
+    for (let i = 0; i < displayedTexts.length; i++) {
+      displayedTexts[i].style.color = color;
+    }
+  }
+  if (elementToChange === "background") {
+    body.style.backgroundColor = color;
+  }
+
+  currentBackgroundColor = color;
   spectrumCursor.style.backgroundColor = color; 
   hueCursor.style.backgroundColor = 'hsl('+ color.toHsl().h +', 100%, 50%)';
 };

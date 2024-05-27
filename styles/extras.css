@@ -376,8 +376,112 @@ body.extras-sky .displayed-text {
 }
  
 
+/*XBOX Achievement */
+#extras-xbox-container {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+#extras-xbox-container p { 
+  font-size: 40px;
+  margin: 10px 20px;
+  animation: fade 6s linear 1s infinite normal; 
+}
 
+#extras-xbox-container .content { 
+  background-color: #2C2827; 
+  border: 7px solid #464241;
+  border-radius: 72px;
+  height: 114px;
+  padding: 10px 13px;
+  overflow: hidden;
+  width: 114px; /* 610*/
+  position: fixed;
+  bottom: 10px;
+  animation: open 6s linear 1s infinite normal;    
+}
 
+#extras-xbox-container .circle { 
+  width: 114px; 
+  height: 114px; 
+  position: relative;
+  float: left;
+}
+
+#extras-xbox-container .circle div.icon {
+  content:'';  
+  width:70px;
+  height:70px;
+  border: 3px solid #050608;
+  position: absolute; 
+  border-radius:50%;
+  margin: 19px;
+  background-color: #050608;
+  text-align: center;
+  font-size: 63px;
+  overflow: hidden;
+  color: #83A02C;
+}
+
+#extras-xbox-container .circle div.leds { 
+  width: 45px; 
+  height: 45px; 
+  float: left;
+  border: 6px solid #050608; 
+  background-color: #605B57;
+}
+
+#extras-xbox-container .led-1 { border-radius: 100% 0 0 0; }
+#extras-xbox-container .led-2 { border-radius: 0 100% 0 0; }
+#extras-xbox-container .led-3 { border-radius: 0 0 0 100%; }
+#extras-xbox-container .led-4 { border-radius: 0 0 100% 0; }
+
+#extras-xbox-container .circle div.blink { 
+  background-color: #83A02C;
+  animation: blink 6s linear 1s infinite normal;  
+}
+
+#extras-xbox-container .achievement { 
+  float: left;
+  display: block;
+  position: absolute;
+  left: 140px; 
+  font-family: 'Ubuntu', sans-serif;
+  color: #CFC6BF
+}
+
+@-webkit-keyframes blink {
+    0% { background-color: #83A02C; }
+    4% { background-color: #83A02C; }
+    8% { background-color: #605B57; }
+   12% { background-color: #83A02C; }
+   16% { background-color: #605B57; }
+   20% { background-color: #83A02C; }
+   24% { background-color: #605B57; }
+   28% { background-color: #83A02C; }
+   32% { background-color: #605B57; }
+   36% { background-color: #83A02C; } 
+  100% { background-color: #83A02C; }
+}
+
+@-webkit-keyframes open {
+    0% { opacity: 0; width: 114px; }
+   10% { width: 114px; }
+   15% { opacity: 1; width: 610px;  }
+   55% { opacity: 1; width: 610px; }
+   63% { opacity: 0; width: 114px; }
+  100% { opacity: 0; width: 114px; }
+}
+
+@-webkit-keyframes fade {
+    0% { opacity: 0; }
+   18% { opacity: 0; }
+   20% { opacity: 1; }
+   50% { opacity: 1; }
+   53% { opacity: 0; }
+  100% { opacity: 0; }
+}
 
 
 

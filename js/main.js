@@ -33,6 +33,7 @@ const iconExtrasGlow3D = document.getElementById('extras-glow3d');
 const iconExtrasCandle = document.getElementById('extras-candle');
 const iconExtrasSparks = document.getElementById('extras-sparks');
 const iconExtrasSky = document.getElementById('extras-sky');
+const iconExtrasXbox = document.getElementById('extras-xbox');
 
 const settingsTop = document.getElementById('settings-top');
 const settingsBottom = document.getElementById('settings-bottom');
@@ -114,8 +115,8 @@ function display(element) {
 
 	element.innerHTML = textToDisplay.value;
 
-	getFontColor();
-	getBackgroundColor();
+	//getFontColor();
+	//getBackgroundColor();
 }
 function enableStatic() {
 	if (document.getElementById("text-marquee") != null) {
@@ -214,7 +215,6 @@ function getFontColor() {
 	currentFontColor = inputFontColor.value;
 	rgb = toRGB(currentFontColor);
 	rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/); 
-	console.log(rgbToHue(parseInt(rgb[1]), parseInt(rgb[2]), parseInt(rgb[3])))
 	changeColor();
 }
 function getBackgroundColor() {
@@ -224,7 +224,6 @@ function getBackgroundColor() {
 function changeColor() {
 	chooseElement();
 	element.style.color = currentFontColor;
-	iconColorPickerFont.style.color = currentFontColor;
 
 	const displayedTexts = document.getElementsByClassName("display-text");
 	for (let i = 0; i < displayedTexts.length; i++) {
@@ -284,18 +283,22 @@ fontsFamily.forEach((fontFamilyOption) => {
 	});
 });
 
-inputFontColor.addEventListener("input",(event)=>{
-	getFontColor();
-});
-inputBackgroundColor.addEventListener("input",(event)=>{
-	getBackgroundColor();
+
+
+
+/* REVIEWED OK */
+typed.addEventListener("click",(event)=>{
+	if (colorPicker.style.display !== "none") {
+		colorPicker.style.display = "none";
+	}
 });
 iconColorPickerFont.addEventListener("click",(event)=>{
 	showColorPicker();
-	//document.getElementById('font-color-to-display').click();
+	elementToChange = "font";
 });
 iconColorPickerBackground.addEventListener("click",(event)=>{
-	document.getElementById('background-color-to-display').click();
+	showColorPicker();
+	elementToChange = "background";
 });
 
 

@@ -4,6 +4,7 @@ const GLOW3D = "glow3d";
 const CANDLE = "candle";
 const SPARKS = "sparks";
 const SKY = "sky";
+const XBOX = "xbox";
 
 let statusNeon = false;
 
@@ -26,6 +27,9 @@ function extras(type) {
 	  	break;
 	  case SKY:
 	  	extrasSky();
+	  	break;
+	  case XBOX:
+	  	extrasXbox();
 	  	break;
 	  default:
 	    break;
@@ -118,7 +122,7 @@ function extrasSparks() {
 	highlightSelectedIcon(iconExtrasSparks);
 }
 //////////////
-function extrasSky() {	
+function extrasSky() {
 	let bodyClass = "extras-sky";
 	let sky = document.getElementById("extras-sky-container");
 
@@ -132,6 +136,20 @@ function extrasSky() {
 	}
 	
 	highlightSelectedIcon(iconExtrasSky);
+}
+//////////////
+function extrasXbox() {
+	let xbox = document.getElementById("extras-xbox-container");
+
+	if (xbox.style.display === "none") {
+		enableStatic();
+		xbox.style.display = "block";
+	}
+	else {
+		xbox.style.display = "none";
+	}
+	
+	highlightSelectedIcon(iconExtrasXbox);
 }
 
 
