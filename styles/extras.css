@@ -74,6 +74,9 @@ body.extras-tv {
 #text-glow3d p {
   animation:glow 10s ease-in-out infinite;
 
+
+  animation:none;
+  -webkit-text-stroke:1px #fff;
 /* For less laggy effect, uncomment this:
   animation:none;
   -webkit-text-stroke:1px #fff;*/
@@ -372,6 +375,21 @@ body.extras-sky .displayed-text {
    animation-delay: -5s;
 }
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
