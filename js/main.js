@@ -21,6 +21,9 @@ let body = document.body;
 const typed = document.getElementById("typed");
 
 /*const displayedText = document.querySelectorAll('.displayed-text');*/
+
+const colorPicker = document.getElementById("color-picker-panel-container");
+
 const iconColorPickerFont = document.getElementById('font-color');
 const iconColorPickerBackground = document.getElementById('background-color');
 
@@ -193,6 +196,20 @@ function fontFamilyChange() {
 }
 
 /* Colors */
+firstTime = true;
+function showColorPicker() {
+	if (colorPicker.style.display === "none") {
+		colorPicker.style.display = "block";
+	}
+	else {
+		colorPicker.style.display = "none";
+	}
+	
+	if (firstTime) {
+		new ColorPicker();
+		firstTime = false;
+	}
+}
 function getFontColor() {
 	currentFontColor = inputFontColor.value;
 	rgb = toRGB(currentFontColor);
@@ -239,7 +256,7 @@ function hideSettingsBar() {
 		settingsTop.classList.remove("hidden");
 		settingsBottom.classList.remove("hidden");
 		settingsHidden = false;
-		hideSettings.style.color = "initial";
+		hideSettings.style.color = "#8B949A";
 	}
 	else {
 		invertColor(currentBackgroundColor);
@@ -274,7 +291,8 @@ inputBackgroundColor.addEventListener("input",(event)=>{
 	getBackgroundColor();
 });
 iconColorPickerFont.addEventListener("click",(event)=>{
-	document.getElementById('font-color-to-display').click();
+	showColorPicker();
+	//document.getElementById('font-color-to-display').click();
 });
 iconColorPickerBackground.addEventListener("click",(event)=>{
 	document.getElementById('background-color-to-display').click();

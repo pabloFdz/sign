@@ -155,7 +155,8 @@ function setCurrentColor(color){
   color = tinycolor(color);
   currentColor = color;
   colorIndicator.style.backgroundColor = color;
-  document.body.style.backgroundColor = color; 
+  document.body.style.backgroundColor = color;
+  currentBackgroundColor = color; //pablo
   spectrumCursor.style.backgroundColor = color; 
   hueCursor.style.backgroundColor = 'hsl('+ color.toHsl().h +', 100%, 50%)';
 };
@@ -263,4 +264,3 @@ window.addEventListener('resize', function(){
   refreshElementRects();
 });
 
-new ColorPicker();
