@@ -84,7 +84,8 @@ body.extras-tv {
 
 #text-glow3d {
   position: inherit;
-  width: 100%;
+  width: 200%;
+  height: 200%;
   top: 0;
 }
 figure {

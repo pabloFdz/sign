@@ -9,7 +9,7 @@ body {
 .color-picker-panel {
   background: #1F232A;
   width: 310px;
-  height: 80%;
+  max-height: 99%;
   border-radius: 8px;
   border: 2px solid #364347;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);

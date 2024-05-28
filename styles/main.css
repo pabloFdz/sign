@@ -46,7 +46,7 @@ input[type="color"] {
 .settings-container .material-icons {
 	color: #8B949A;
 }
-.settings-container span.material-icons {
+.settings-container button.setting-option.material-icons {
 	margin: 5px;
 	padding: 0 6px;
 
@@ -60,10 +60,12 @@ input[type="color"] {
     
     border: 1px solid #364347;
     border-radius: 8px;
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
-span{
-	
-}
+
 @keyframes changewidth {
   from {
     filter: drop-shadow(0px 0px 1px rgb(94,91,102));
@@ -73,7 +75,10 @@ span{
     filter: drop-shadow(-1px 0px 0px rgb(255,237,228));
   }
 }
-span.selected {
+.settings-container button.setting-option.material-icons:disabled {
+	opacity: 0.3;
+}
+button.setting-option.selected {
 	color: var(--main);
 
 	/*animation-duration: 1.7s;
@@ -231,6 +236,9 @@ span.selected {
   }
   .settings-container :not(.portrait) {
     display: none;
+  }
+  .tab-title {
+  	display: none;
   }
 }
 

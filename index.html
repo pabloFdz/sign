@@ -14,31 +14,31 @@
 <body class="arial">
 	<div id="main-settings" class="purple" style="display: none">
 		<input type="text" placeholder="Type here..." value="Hello!">
-		<span id="enable-static" onclick="enableStatic()" class="stopped material-icons">stop_circle</span>
-		<span id="enable-marquee" onclick="enableMarquee()" class="material-icons">play_circle</span>
+		<button id="enable-static" onclick="enableStatic()" class="stopped material-icons setting-option">stop_circle</button>
+		<button id="enable-marquee" onclick="enableMarquee()" class="material-icons setting-option">play_circle</button>
 
 		<div class="tab-nav-container-background">
 			<div class="tab">
-				<span class="stopped material-icons">edit_note</span>
-				<p>Text</p>
+				<button class="stopped material-icons">edit_note</button>
+				<p class="tab-title">Text</p>
 			</div>
 		</div>
 		<div class="tab-nav-container">
 		    <div class="tab active purple" data-color="purple">
 		        <span class="stopped material-icons">edit_note</span>
-		        <p>Text</p>
+		        <p class="tab-title">Text</p>
 		    </div>
 		    <div class="tab pink" data-color="pink">
 		        <span class="stopped material-icons">blur_on</span>
-		        <p>Effects</p>
+		        <p class="tab-title">Effects</p>
 		    </div>
 		    <div class="tab yellow" data-color="yellow">
 		        <span class="stopped material-icons">wallpaper</span>
-		        <p>Background</p>
+		        <p class="tab-title">Background</p>
 		    </div>
 		    <div class="tab teal" data-color="teal">
 		        <span class="stopped material-icons">stop_circle</span>
-		        <p>Profile</p>
+		        <p class="tab-title">Profile</p>
 		    </div>
 		</div>
 		
@@ -46,43 +46,43 @@
 	</div>
 
 	<div id="settings-top" class="settings-container">
-		<span id="background-color" class="material-icons portrait">format_color_fill</span>
+		<button id="background-color" class="material-icons setting-option portrait">format_color_fill</button>
 
 		<hr>
 
-		<span id="enable-static" onclick="enableStatic()" class="stopped material-icons">stop_circle</span>
-		<span id="enable-marquee" onclick="enableMarquee()" class="material-icons">play_circle</span>
+		<button id="enable-static" onclick="enableStatic()" class="stopped material-icons setting-option">stop_circle</button>
+		<button id="enable-marquee" onclick="enableMarquee()" class="material-icons setting-option">play_circle</button>
 
 		<hr>
 		<!-- 
-			<span class="material-icons"></span>
+			<button class="material-icons setting-option"></button>
 			highlight
 			flashlight_on
 			flashlight_off
 			traffic
 		 -->
-		<span id="blink" onclick="toggleBlinkText()" class="material-icons">generating_tokens</span>
+		<button id="blink" onclick="toggleBlinkText()" class="material-icons setting-option">generating_tokens</button>
 		<!-- wb_iridescent -->
-		<span id="blink-full" onclick="toggleBlinkFull()" class="material-icons">exposure</span>
+		<button id="blink-full" onclick="toggleBlinkFull()" class="material-icons setting-option">exposure</button>
 		<!-- contrast -->
 		<hr>
 
-		<span id="extras-tv" onclick="extras('tv')" class="material-icons">tv</span>
-		<span id="extras-neon" onclick="extras('neon')" class="material-icons">flare</span>
-		<span id="extras-glow3d" onclick="extras('glow3d')" class="material-icons">3d_rotation</span>
-		<span id="extras-candle" onclick="extras('candle')" class="material-icons">cake</span>
-		<span id="extras-sparks" onclick="extras('sparks')" class="material-icons">auto_awesome</span>
-		<span id="extras-sky" onclick="extras('sky')" class="material-icons">nights_stay</span>
-		<span id="extras-xbox" onclick="extras('xbox')" class="material-icons">sports_esports</span>
+		<button id="extras-tv" onclick="extras('tv')" class="material-icons setting-option no-offline">tv</button>
+		<button id="extras-neon" onclick="extras('neon')" class="material-icons setting-option no-offline">flare</button>
+		<button id="extras-glow3d" onclick="extras('glow3d')" class="material-icons setting-option no-offline">3d_rotation</button>
+		<button id="extras-candle" onclick="extras('candle')" class="material-icons setting-option no-offline">cake</button>
+		<button id="extras-sparks" onclick="extras('sparks')" class="material-icons setting-option no-offline">auto_awesome</button>
+		<button id="extras-sky" onclick="extras('sky')" class="material-icons setting-option no-offline">nights_stay</button>
+		<button id="extras-xbox" onclick="extras('xbox')" class="material-icons setting-option no-offline">sports_esports</button>
 
 	</div>
 
 	<div id="settings-bottom" class="settings-container">
 		<div class="hide-settings image-container portrait">
-			<span id="hide-settings" onclick="hideSettingsBar()" class="material-icons">visibility_off</span>
+			<button id="hide-settings" onclick="hideSettingsBar()" class="material-icons setting-option">visibility_off</button>
 		</div>
 
-		<span id="icon-main-settings" onclick="toggleMainSettings()" class="material-icons portrait">tune</span>
+		<button id="icon-main-settings" onclick="toggleMainSettings()" class="material-icons setting-option portrait">tune</button>
 
 		<hr>
 
@@ -90,16 +90,16 @@
 		
 		<hr>
 		
-		<span id="font-color" class="material-icons portrait">palette</span>
+		<button id="font-color" class="material-icons setting-option portrait">palette</button>
 
 		<hr>
 		
-		<span id="font-selector" onclick="fontFamilyChange()" class="material-icons portrait">text_fields</span>
+		<button id="font-selector" onclick="fontFamilyChange()" class="material-icons setting-option portrait">text_fields</button>
 
 		<hr>
 		
-		<span id="font-magnify" onclick="fontMagnify()" class="material-icons portrait">text_increase</span>
-		<span id="font-reduce" onclick="fontReduce()" class="material-icons portrait">text_decrease</span>
+		<button id="font-magnify" onclick="fontMagnify()" class="material-icons setting-option portrait">text_increase</button>
+		<button id="font-reduce" onclick="fontReduce()" class="material-icons setting-option portrait">text_decrease</button>
 
 		
 		
@@ -350,6 +350,7 @@
 
 
 	<script type="text/javascript" src="js/utils.js"></script>
+	<script type="text/javascript" src="js/network.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="js/tabs.js"></script>
 	<script type="text/javascript" src="js/colorpicker.js"></script>
