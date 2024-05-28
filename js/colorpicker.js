@@ -43,13 +43,7 @@ ColorPicker.prototype.defaultSwatches = [
   '#0532FF', 
   '#FF9300', 
   '#00F91A', 
-  '#FF2700', 
-  '#000000', 
-  '#686868', 
-  '#EE5464', 
-  '#D27AEE', 
-  '#5BA8C4', 
-  '#E64AA9'
+  '#FF2700'
 ];
 
 function createSwatch(target, color){

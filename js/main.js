@@ -10,7 +10,7 @@ const changeFontFamilyContainer = document.getElementById("font-selector-contain
 const fontsFamily = document.querySelectorAll('[attr-font]');
 const inputFontColor = document.getElementById("font-color-to-display");
 const inputBackgroundColor = document.getElementById("background-color-to-display");
-const blurryBackground = document.getElementById("font-selector-blur");
+const blur = document.getElementById("blur");
 
 const iconMainSettings = document.getElementById("icon-main-settings");
 const iconTextStatic = document.getElementById("enable-static");
@@ -42,8 +42,8 @@ const settingsBottom = document.getElementById('settings-bottom');
 const hideSettings = document.getElementById('hide-settings');
 
 let currentFont = "Led Bus"
-let currentFontColor = "#000";
-let currentBackgroundColor = "#fff";
+let currentFontColor = "#8B949A";
+let currentBackgroundColor = "#1F232A";
 
 let fontSize = 700;
 let enableBlink = true;
@@ -57,11 +57,11 @@ let slidingText = false; // false Static | true Marquee
 function toggleMainSettings() {
 	if (mainSettings.style.display === "none") {
 		mainSettings.style.display = "block";
-		blurryBackground.style.display = "block";
+		blur.style.display = "block";
 	}
 	else {
 		mainSettings.style.display = "none";
-		blurryBackground.style.display = "none";
+		blur.style.display = "none";
 	}
 }
 
@@ -197,11 +197,11 @@ function fontChangeSize() {
 function fontFamilyChange() {
 	if (changeFontFamilyContainer.style.display === "none") {
 		changeFontFamilyContainer.style.display = "block";
-		blurryBackground.style.display = "block";
+		blur.style.display = "block";
 	}
 	else {
 		changeFontFamilyContainer.style.display = "none";
-		blurryBackground.style.display = "none";
+		blur.style.display = "none";
 	}
 
 	highlightSelectedIcon(iconFontFamily);
@@ -213,9 +213,11 @@ firstTime = true;
 function showColorPicker() {
 	if (colorPicker.style.display === "none") {
 		colorPicker.style.display = "block";
+		blur.style.display = "block";
 	}
 	else {
 		colorPicker.style.display = "none";
+		blur.style.display = "none";
 	}
 	
 	if (firstTime) {
@@ -299,9 +301,12 @@ fontsFamily.forEach((fontFamilyOption) => {
 
 
 /* REVIEWED OK */
-typed.addEventListener("click",(event)=>{
-	if (colorPicker.style.display !== "none") {
+blur.addEventListener("click",(event)=>{
+	if (colorPicker.style.display !== "none" || changeFontFamilyContainer.style.display !== "none" || mainSettings.style.display !== "none") {
 		colorPicker.style.display = "none";
+		blur.style.display = "none";
+		changeFontFamilyContainer.style.display = "none";
+		mainSettings.style.display = "none";
 	}
 });
 iconColorPickerFont.addEventListener("click",(event)=>{
