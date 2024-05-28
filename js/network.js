@@ -21,7 +21,14 @@ function goOffline() {
 }
 
 (function() {
-   if (!navigator.onLine) {
-   	goOffline();
-   }
+	const urlParams = new URLSearchParams(window.location.search);
+	const paramFrom = urlParams.get('from')
+
+	if (paramFrom !== "pwa") {
+		//window.location.href = "links.txt"; // Uncomment when on production
+	}
+
+	if (!navigator.onLine) {
+		goOffline();
+   	}
 })();
