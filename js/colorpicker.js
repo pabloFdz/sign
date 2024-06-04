@@ -29,7 +29,9 @@ var blue = document.getElementById('blue');
 var green = document.getElementById('green');
 var hex = document.getElementById('hex');
 
-let elementToChange = ""; 
+let elementToChange = "";
+let currentSwatches = 0;
+let maxSwatches = 16;
 
 function ColorPicker(){
   this.addDefaultSwatches();
@@ -259,8 +261,11 @@ blue.addEventListener('change', function(){
     colorToPos(color);
 });
 
-addSwatch.addEventListener('click', function(){  
-  createSwatch(userSwatches, currentColor);
+addSwatch.addEventListener('click', function(){
+  if (currentSwatches < maxSwatches) {
+    createSwatch(userSwatches, currentColor);
+    currentSwatches++;
+  }
 });
 
 modeToggle.addEventListener('click', function(){
