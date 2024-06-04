@@ -8,10 +8,17 @@
 	<link rel="stylesheet" type="text/css" href="styles/extras.css">
 	<link rel="stylesheet" type="text/css" href="styles/tabs.css">
 	<link rel="stylesheet" type="text/css" href="styles/colorpicker.css">
-	
+    
+    <link rel="manifest" href="manifest.json" />
+
 	
 </head>
 <body class="arial">
+	<script>
+	  if (typeof navigator.serviceWorker !== 'undefined') {
+	    navigator.serviceWorker.register('sw/sw.js')
+	  }
+	</script>
 	<div id="main-settings" class="purple" style="display: none">
 		<input type="text" placeholder="Type here..." value="Hello!">
 		<button id="enable-static" onclick="enableStatic()" class="stopped material-icons setting-option">stop_circle</button>
