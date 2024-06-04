@@ -6,5 +6,11 @@
       "type": "image/png",
       "sizes": "512x512"
     }
-  ]
+  ],
+  "theme_color": "#8b949a",
+  "background_color": "#1f232a",
+  "short_name": "LED Sign",
+  "id": "salmonjump_led",
+  "description": "The best LED Sign",
+  "display": "fullscreen"
 }
