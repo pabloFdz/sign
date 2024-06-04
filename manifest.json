@@ -1,5 +1,7 @@
 {
   "name": "LED Sign",
+  "short_name": "LED Sign",
+  "start_url": "https://pablofdz.github.io/sign/",
   "icons": [
     {
       "src": "icons/512.png",
