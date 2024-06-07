@@ -15,6 +15,7 @@ body {
 	margin: 0;
 
 	font-family: "Open Sans", no-serif;
+	overscroll-behavior-y: contain;
 }
 img {
 	width: auto;
