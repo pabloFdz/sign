@@ -265,16 +265,18 @@ const toRGB = (color) => {
 }
 function hideSettingsBar() {
 	if (settingsHidden) {
-		invertColor(currentBackgroundColor);
+		//invertColor(currentBackgroundColor);
 		settingsTop.classList.remove("hidden");
 		settingsBottom.classList.remove("hidden");
 		settingsHidden = false;
+		hideSettings.classList.remove('settings-hidden');
 		hideSettings.style.color = "#8B949A";
 	}
 	else {
 		invertColor(currentBackgroundColor);
 		settingsTop.classList.add("hidden");
 		settingsBottom.classList.add("hidden");
+		hideSettings.classList.add('settings-hidden');
 		settingsHidden = true;
 	}
 }

@@ -53,7 +53,7 @@
 	</div>
 
 	<div id="settings-top" class="settings-container">
-		<button id="background-color" class="material-icons setting-option portrait">format_color_fill</button>
+		<button id="background-color" class="material-icons setting-option portrait-hide">format_color_fill</button>
 
 		<hr>
 
@@ -85,28 +85,28 @@
 	</div>
 
 	<div id="settings-bottom" class="settings-container">
-		<div class="hide-settings image-container portrait">
+		<div class="hide-settings image-container">
 			<button id="hide-settings" onclick="hideSettingsBar()" class="material-icons setting-option">visibility_off</button>
 		</div>
 
-		<button id="icon-main-settings" onclick="toggleMainSettings()" class="material-icons setting-option portrait">tune</button>
+		<button id="icon-main-settings" onclick="toggleMainSettings()" class="material-icons setting-option portrait-hide">tune</button>
 
 		<hr>
 
-		<input id="text-to-display" class="portrait" type="text" placeholder="Type here..." value="Hello!">
+		<input id="text-to-display" class="portrait-hide" type="text" placeholder="Type here..." value="Hello!">
 		
 		<hr>
 		
-		<button id="font-color" class="material-icons setting-option portrait">palette</button>
+		<button id="font-color" class="material-icons setting-option portrait-hide">palette</button>
 
 		<hr>
 		
-		<button id="font-selector" onclick="fontFamilyChange()" class="material-icons setting-option portrait">text_fields</button>
+		<button id="font-selector" onclick="fontFamilyChange()" class="material-icons setting-option portrait-hide">text_fields</button>
 
 		<hr>
 		
-		<button id="font-magnify" onclick="fontMagnify()" class="material-icons setting-option portrait">text_increase</button>
-		<button id="font-reduce" onclick="fontReduce()" class="material-icons setting-option portrait">text_decrease</button>
+		<button id="font-magnify" onclick="fontMagnify()" class="material-icons setting-option portrait-hide">text_increase</button>
+		<button id="font-reduce" onclick="fontReduce()" class="material-icons setting-option portrait-hide">text_decrease</button>
 
 		
 		
@@ -219,8 +219,8 @@
 				</div>
 				<button id="mode-toggle" class="button mode-toggle">Mode</button>
 			</div>
-			<div class="panel-row">
-				<h2 style="display: none" class="panel-header">User Colors</h2>
+			<div class="panel-row" style="display: none">
+				<h2 class="panel-header">User Colors</h2>
 				<div id="user-swatches" class="swatches custom-swatches"></div>
 				<button id="add-swatch" class="button add-swatch">
 					<span id="color-indicator" class="color-indicator"></span><span>Add to Swatches</span>

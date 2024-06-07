@@ -164,9 +164,9 @@ function setCurrentColor(color){
   }
   if (elementToChange === "background") {
     body.style.backgroundColor = color;
+    currentBackgroundColor = color;
   }
 
-  currentBackgroundColor = color;
   spectrumCursor.style.backgroundColor = color; 
   hueCursor.style.backgroundColor = 'hsl('+ color.toHsl().h +', 100%, 50%)';
 };

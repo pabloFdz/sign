@@ -80,7 +80,7 @@ input[type="color"] {
 	opacity: 0.3;
 }
 button.setting-option.selected {
-	color: var(--main);
+	color: var(--main) !important;
 
 	/*animation-duration: 1.7s;
 	animation-name: changewidth;
@@ -150,6 +150,10 @@ button.setting-option.selected {
 	border: none !important;
 	background-color: transparent;
 	box-shadow: none !important;
+}
+#hide-settings.settings-hidden {
+	border: none;
+	background: transparent;
 }
 .settings-container.hidden >:not(.hide-settings) {
 	visibility: hidden;
@@ -235,7 +239,7 @@ button.setting-option.selected {
   .settings-container {
     justify-content: space-around;
   }
-  .settings-container :not(.portrait) {
+  .settings-container :not(.portrait-hide) {
     display: none;
   }
   .tab-title {
