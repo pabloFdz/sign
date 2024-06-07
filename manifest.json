@@ -14,5 +14,6 @@
   "short_name": "LED Sign",
   "id": "salmonjump_led",
   "description": "The best LED Sign",
-  "display": "fullscreen"
+  "display": "fullscreen",
+  "orientation": "landscape"
 }
