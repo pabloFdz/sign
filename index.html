@@ -20,9 +20,33 @@
 	  }
 	</script>
 	<div id="main-settings" class="purple" style="display: none">
-		<input type="text" placeholder="Type here..." value="Hello!">
-		<button id="enable-static" onclick="enableStatic()" class="stopped material-icons setting-option">stop_circle</button>
-		<button id="enable-marquee" onclick="enableMarquee()" class="material-icons setting-option">play_circle</button>
+		<div id="text-settings">
+			<span>Text: </span><input type="text" placeholder="Type here..." value="Hello!">
+			<br>
+			<span>Movement: </span><input type="checkbox"/>
+			<br>
+			<span>Speed: </span><button>-</button>x<span id="text-speed-value">1</span><button>+</button>
+			<br>
+			<span>Font type:</span>
+			<br>
+			<span>Font size:</span><button>-</button>x<span id="font-size-value">1</span><button>+</button>
+		</div>
+		<div id="text-effects" style="display: none">
+			<input type="text" placeholder="Type here..." value="Hello!">
+			<button id="enable-static" onclick="enableStatic()" class="stopped material-icons setting-option">stop_circle</button>
+			<button id="enable-marquee" onclick="enableMarquee()" class="material-icons setting-option">play_circle</button>	
+		</div>
+		<div id="text-background" style="display: none">
+			<input type="text" placeholder="Type here..." value="Hello!">
+			<button id="enable-static" onclick="enableStatic()" class="stopped material-icons setting-option">stop_circle</button>
+			<button id="enable-marquee" onclick="enableMarquee()" class="material-icons setting-option">play_circle</button>	
+		</div>
+		<div id="text-profile" style="display: none">
+			<input type="text" placeholder="Type here..." value="Hello!">
+			<button id="enable-static" onclick="enableStatic()" class="stopped material-icons setting-option">stop_circle</button>
+			<button id="enable-marquee" onclick="enableMarquee()" class="material-icons setting-option">play_circle</button>	
+		</div>
+		
 
 		<div class="tab-nav-container-background">
 			<div class="tab">
@@ -57,8 +81,7 @@
 
 		<hr>
 
-		<button id="enable-static" onclick="enableStatic()" class="stopped material-icons setting-option">stop_circle</button>
-		<button id="enable-marquee" onclick="enableMarquee()" class="material-icons setting-option">play_circle</button>
+		<button id="text-movement" onclick="enableStatic()" class="stopped material-icons setting-option">play_circle</button>
 
 		<hr>
 		<!-- 
@@ -105,8 +128,8 @@
 
 		<hr>
 		
-		<button id="font-magnify" onclick="fontMagnify()" class="material-icons setting-option portrait-hide">text_increase</button>
-		<button id="font-reduce" onclick="fontReduce()" class="material-icons setting-option portrait-hide">text_decrease</button>
+		<button id="font-magnify" onclick="fontMagnify()" class="material-icons setting-option portrait-hide unselectable">text_increase</button>
+		<button id="font-reduce" onclick="fontReduce()" class="material-icons setting-option portrait-hide unselectable">text_decrease</button>
 
 		
 		
@@ -235,20 +258,20 @@
 	<div id="typed">
 		<p id="text-static" class="display-text displayed-text">Hello!</p>
 		<p id="text-neon" class="display-text displayed-text" style="display: none"></p>
-		<div id="text-glow3d" style="display: none">
-		  	<figure>
-		  	  <p class="display-text">Hello!</p>
-		  	  <p class="display-text">Hello!</p>
-		  	  <p class="display-text">Hello!</p>
-		  	  <p class="display-text">Hello!</p>
-		  	  <p class="display-text">Hello!</p>
-		  	  <p class="display-text">Hello!</p>
-		  	  <p class="display-text">Hello!</p>
-		  	  <p class="display-text">Hello!</p>
-		  	  <p class="display-text">Hello!</p>
-		  	  <p class="display-text">Hello!</p>  
-		  	</figure>
-		  </div>
+	</div>
+	<div id="text-glow3d" style="display: none">
+		<figure>
+			<p class="display-text">Hello!</p>
+			<p class="display-text">Hello!</p>
+			<p class="display-text">Hello!</p>
+			<p class="display-text">Hello!</p>
+			<p class="display-text">Hello!</p>
+			<p class="display-text">Hello!</p>
+			<p class="display-text">Hello!</p>
+			<p class="display-text">Hello!</p>
+			<p class="display-text">Hello!</p>
+			<p class="display-text">Hello!</p>  
+		</figure>
 	</div>
 
 	<div id="extras-candle-container" style="display: none">
@@ -267,7 +290,7 @@
 		    <li data-hue="30" class="display-text">Hello!</li>
 		  </ul>
 		</div>
-		<canvas></canvas>
+		<canvas id="canvas-sparks"></canvas>
 	</div>
 	<div id="extras-xbox-container" style="display: none">
 		<div class="content">

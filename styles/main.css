@@ -86,12 +86,20 @@ button.setting-option.selected {
 	animation-name: changewidth;
 	animation-iteration-count: infinite;*/
 }
+button.setting-option.unselectable {
+	color: #8B949A !important;
+
+	/*animation-duration: 1.7s;
+	animation-name: changewidth;
+	animation-iteration-count: infinite;*/
+}
 #main-settings {
 	position: absolute;
 
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
+	text-align: left;
 
 	width: 70%;
 	height: 80%;
@@ -100,7 +108,7 @@ button.setting-option.selected {
 	top: 50%;
 	transform: translate(-50%, -50%);
 
-	color: var(--text);
+	color: #fff;
 
 	padding: .5% 2%;
 
@@ -225,15 +233,8 @@ button.setting-option.selected {
     top: 50%;
     position: relative;
     transform: translateY(-50%);
+    width: max-content;
 }
-#enable-static.stopped {
-	color:red;
-}
-#enable-marquee.playing {
-	color:green;
-}
-
-
 
 @media (orientation: portrait) {
   .settings-container {

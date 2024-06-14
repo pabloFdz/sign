@@ -12,7 +12,7 @@ class TextSparks
         this.tick   = 0;
         this.drawCB = null;
         this.mask   = null;
-        this.canvas = window.document.querySelector('canvas');
+        this.canvas = window.document.querySelector('#canvas-sparks');
         this.engine = this.canvas.getContext('2d');
 
         this.maskTick   = 0;

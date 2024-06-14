@@ -5,7 +5,7 @@ https://fonts.google.com/icons?selected=Material+Icons:tune:&icon.query=setting&
 You can just wrap your PWA in a webview using Cordova, Ionic or Capacitor. This way you will be able to take advantage of the Admob Sdk to monetise your app. On the web version you can use Adsense and then on the native one you can use the Admob Sdk. I used this plugin in one of my Cordova apps before and it works seamlessly for any type of ad https://www.npmjs.com/package/admob-plus-cordova.
 
 
-
+Access files - to read special .css for paid version
 
 
 

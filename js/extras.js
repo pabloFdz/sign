@@ -39,11 +39,11 @@ function extras(type) {
 //////////////
 function extrasTV() {
 	toggleBodyClass("extras-tv");
-	highlightSelectedIcon(iconExtrasTv);
+	
 }
 //////////////
 function extrasNeon() {
-	highlightSelectedIcon(iconExtrasNeon);
+	
 
 	if (statusNeon) {
 		extrasNeonDisable();
@@ -82,14 +82,14 @@ function extrasNeonDisable() {
 	textNeon.style.display = "none";
 	textGlow3D.style.display = "none";
 	statusNeon = false;
-	removeHighlightedIcon(iconExtrasNeon);
+	
 }
 //////////////
 function extrasGlow3D() {
 	textStatic.style.display = "none";
 	textNeon.style.display = "none";
 	textGlow3D.style.display = "block";
-	highlightSelectedIcon(iconExtrasGlow3D);
+	
 }
 //////////////
 function extrasCandle() {
@@ -103,7 +103,7 @@ function extrasCandle() {
 		candle.style.display = "none";
 	}
 	
-	highlightSelectedIcon(iconExtrasCandle);
+	
 }
 //////////////
 function extrasSparks() {
@@ -119,7 +119,7 @@ function extrasSparks() {
 		sparksObject.destroySparks();
 	}
 	
-	highlightSelectedIcon(iconExtrasSparks);
+	
 }
 //////////////
 function extrasSky() {
@@ -135,7 +135,7 @@ function extrasSky() {
 		sky.style.display = "block";
 	}
 	
-	highlightSelectedIcon(iconExtrasSky);
+	
 }
 //////////////
 function extrasXbox() {
@@ -149,7 +149,7 @@ function extrasXbox() {
 		xbox.style.display = "none";
 	}
 	
-	highlightSelectedIcon(iconExtrasXbox);
+	
 }
 
 

@@ -83,7 +83,7 @@ body.extras-tv {
 }
 
 #text-glow3d {
-  position: inherit;
+  position: absolute;
   width: 200%;
   height: 200%;
   top: 0;
@@ -298,6 +298,7 @@ figure {
 canvas {
   position: absolute;
   top: 0;
+  left: 0;
   width:100vw;
   height:100vh;
 }

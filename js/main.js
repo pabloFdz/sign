@@ -4,7 +4,6 @@ const textToDisplay = document.getElementById("text-to-display");
 const textStatic = document.getElementById("text-static");
 const textNeon = document.getElementById("text-neon");
 const textGlow3D = document.getElementById("text-glow3d");
-let textMarquee = document.getElementById("text-marquee");
 
 const changeFontFamilyContainer = document.getElementById("font-selector-container");
 const fontsFamily = document.querySelectorAll('[attr-font]');
@@ -13,8 +12,7 @@ const inputBackgroundColor = document.getElementById("background-color-to-displa
 const blur = document.getElementById("blur");
 
 const iconMainSettings = document.getElementById("icon-main-settings");
-const iconTextStatic = document.getElementById("enable-static");
-const iconTextMarquee = document.getElementById("enable-marquee");
+const iconTextStatic = document.getElementById("text-movement");
 const iconBlinkText = document.getElementById("blink");
 const iconBlinkFull = document.getElementById("blink-full");
 const iconFontFamily = document.getElementById("font-selector");
@@ -22,6 +20,7 @@ const iconFontFamily = document.getElementById("font-selector");
 let body = document.body;
 const typed = document.getElementById("typed");
 
+let settingsItems = document.querySelectorAll(".setting-option");
 /*const displayedText = document.querySelectorAll('.displayed-text');*/
 
 const colorPicker = document.getElementById("color-picker-panel-container");
@@ -50,9 +49,8 @@ let enableBlink = true;
 let blink = true;
 let settingsHidden = false;
 let element = textStatic;
+let moveCount = 100;
 
-
-let slidingText = false; // false Static | true Marquee
 
 function toggleMainSettings() {
 	if (mainSettings.style.display === "none") {
@@ -80,7 +78,6 @@ function toggleBlinkText() {
 		changeColor();
 		iconBlinkFull.setAttribute("onclick", "toggleBlinkFull()");
 	}
-	highlightSelectedIcon(iconBlinkText);
 }
 function startBlinkText() {
     if (blink) {
@@ -131,43 +128,31 @@ function display(element) {
 	//getBackgroundColor();
 }
 function enableStatic() {
-	if (document.getElementById("text-marquee") != null) {
-	  document.getElementById("text-marquee").remove();
-	  textStatic.style.display = "block";
-	  iconTextStatic.classList.add("stopped");
-	  iconTextMarquee.classList.remove("playing");
-	}
-}
-function enableMarquee() {
-	bodyClass="extras-neon";
+	textMovementWidth = textStatic.offsetWidth * (-1);
+	bodyClass = "text-movement";
 	if (body.classList.contains(bodyClass)) {
+		clearInterval(textMovementInterval);
 		body.classList.remove(bodyClass);
-		extrasNeonDisable();
+		textStatic.style.left = "";
+		iconTextStatic.innerHTML = "play_circle";
 	}
-
-	textStatic.style.display = "none";
-	addMarquee();
-	display("text-marquee");
-	chooseElement("text-marquee");
+	else {
+		textMovementInterval = setInterval(moveText, 20);
+		body.classList.add(bodyClass);
+		iconTextStatic.innerHTML = "stop_circle";
+	}
 }
-function addMarquee() {
-	let marquee = document.createElement("marquee");
-	marquee.setAttribute("id", "text-marquee");
-	marquee.setAttribute("class", "displayed-text");
-	marquee.setAttribute("scrollamount", "15");
-	marquee.setAttribute("direction", "left");
-	marquee.style.display = "block";
-	marquee.style.color = currentFontColor;
-	marquee.innerHTML = textToDisplay.value;
-	typed.appendChild(marquee);
 
-	slidingText = true;
-	iconTextStatic.classList.remove("stopped");
-	iconTextMarquee.classList.add("playing");
-}
-function resetMarquee() {
-	document.getElementById("text-marquee").remove();
-	addMarquee();
+function moveText() {
+    textStatic.style.left = moveCount+"%";
+    currentLeftPosition = window.getComputedStyle(textStatic).getPropertyValue("left").replace("px", "");
+    if (currentLeftPosition <= textMovementWidth) {
+        moveCount = 100
+    }
+    else {
+        moveCount--;
+    }
+    console.log("currentLeftPosition: " + currentLeftPosition + " textMovementWidth: " + textMovementWidth);
 }
 
 /* Font size */
@@ -181,14 +166,6 @@ function fontReduce() {
 	fontChangeSize();
 }
 function fontChangeSize() {
-	// if (slidingText) {
-	// 	resetMarquee();
-	// 	element = document.getElementById("text-marquee");
-	// }
-	// else {
-	// 	element = textStatic;
-	// }
-
 	const displayedTexts = document.getElementsByClassName("displayed-text");
 	for (let i = 0; i < displayedTexts.length; i++) {
 	  displayedTexts[i].style.fontSize = fontSize + "%";
@@ -300,7 +277,12 @@ fontsFamily.forEach((fontFamilyOption) => {
 });
 
 
-
+settingsItems.forEach(element => {
+  element.addEventListener('click', () => {
+    console.log('Element clicked:', element.id);    
+    highlightSelectedIcon(element);
+  });
+});
 
 /* REVIEWED OK */
 blur.addEventListener("click",(event)=>{
@@ -319,5 +301,4 @@ iconColorPickerBackground.addEventListener("click",(event)=>{
 	showColorPicker();
 	elementToChange = "background";
 });
-
 
