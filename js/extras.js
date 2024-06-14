@@ -48,7 +48,6 @@ function extrasNeon() {
 	}
 
 	statusNeon = true;
-	enableStatic();
 	textStatic.style.display = "none";
 	textNeon.style.display = "block";
 	textGlow3D.style.display = "none";
@@ -86,27 +85,24 @@ function extrasGlow3D() {
 	textNeon.style.display = "none";
 	textGlow3D.style.display = "block";
 	
+	toggleBodyClass('extras-glow3d');
 }
 //////////////
 function extrasCandle() {
 	let candle = document.getElementById("extras-candle-container");
 
 	if (candle.style.display === "none") {
-		enableStatic();
 		candle.style.display = "block";
 	}
 	else {
 		candle.style.display = "none";
-	}
-	
-	
+	}	
 }
 //////////////
 function extrasSparks() {
 	let sparks = document.getElementById("extras-sparks-container");
 
 	if (sparks.style.display === "none") {
-		enableStatic();
 		sparks.style.display = "block";
 		sparksObject.createSparks();
 	}
@@ -114,8 +110,6 @@ function extrasSparks() {
 		sparks.style.display = "none";
 		sparksObject.destroySparks();
 	}
-	
-	
 }
 //////////////
 function extrasSky() {
@@ -130,22 +124,17 @@ function extrasSky() {
 		body.classList.add(bodyClass);
 		sky.style.display = "block";
 	}
-	
-	
 }
 //////////////
 function extrasXbox() {
 	let xbox = document.getElementById("extras-xbox-container");
 
 	if (xbox.style.display === "none") {
-		enableStatic();
 		xbox.style.display = "block";
 	}
 	else {
 		xbox.style.display = "none";
 	}
-	
-	
 }
 
 

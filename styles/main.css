@@ -14,6 +14,8 @@ body {
 
 	margin: 0;
 
+	overflow: hidden;
+
 	font-family: "Open Sans", no-serif;
 	overscroll-behavior-y: contain;
 }
@@ -67,31 +69,34 @@ input[type="color"] {
     user-select: none; /* Standard syntax */
 }
 
-@keyframes changewidth {
+@keyframes changeColor {
   from {
-    filter: drop-shadow(0px 0px 1px rgb(94,91,102));
+    color: var(--main);
   }
 
   to {
-    filter: drop-shadow(-1px 0px 0px rgb(255,237,228));
+    color: #8B949A;
   }
 }
 .settings-container button.setting-option.material-icons:disabled {
 	opacity: 0.3;
 }
-button.setting-option.selected {
-	color: var(--main) !important;
+.settings-container button.setting-option.material-icons.selected {
+	color: var(--main);
 
 	/*animation-duration: 1.7s;
 	animation-name: changewidth;
 	animation-iteration-count: infinite;*/
 }
-button.setting-option.unselectable {
-	color: #8B949A !important;
+.settings-container button.setting-option.material-icons.selected {
+	color: var(--main);
+}
+.settings-container button.setting-option.material-icons.unselectable:focus,
+.settings-container button.setting-option.material-icons.unselectable:active {
+	color: #8B949A;
+	animation-duration: 0.5s;
+	animation-name: changeColor;
 
-	/*animation-duration: 1.7s;
-	animation-name: changewidth;
-	animation-iteration-count: infinite;*/
 }
 #main-settings {
 	position: absolute;

@@ -20,7 +20,7 @@ const iconFontFamily = document.getElementById("font-selector");
 let body = document.body;
 const typed = document.getElementById("typed");
 
-let settingsItems = document.querySelectorAll(".setting-option");
+let settingsItems = document.querySelectorAll(".setting-option:not(.unselectable)");
 /*const displayedText = document.querySelectorAll('.displayed-text');*/
 
 const colorPicker = document.getElementById("color-picker-panel-container");
@@ -126,20 +126,28 @@ function display(element) {
 	//getFontColor();
 	//getBackgroundColor();
 }
-function enableStatic() {
+function enableStatic(force = false) {
 	textMovementWidth = textStatic.offsetWidth * (-1);
 	bodyClass = "text-movement";
-	if (body.classList.contains(bodyClass)) {
-		clearInterval(textMovementInterval);
-		body.classList.remove(bodyClass);
-		textStatic.style.left = "";
-		iconTextStatic.innerHTML = "play_circle";
+
+	if (body.classList.contains(bodyClass) || force) {
+		moveTextStop();
 	}
 	else {
-		textMovementInterval = setInterval(moveText, 20);
-		body.classList.add(bodyClass);
-		iconTextStatic.innerHTML = "stop_circle";
+		moveTextStart();
 	}
+}
+let textMovementInterval;
+function moveTextStart() {
+	textMovementInterval = setInterval(moveText, 20);
+	body.classList.add(bodyClass);
+	iconTextStatic.innerHTML = "stop_circle";
+}
+function moveTextStop() {
+	clearInterval(textMovementInterval);
+	body.classList.remove(bodyClass);
+	textStatic.style.left = "";
+	iconTextStatic.innerHTML = "play_circle";
 }
 
 function moveText() {

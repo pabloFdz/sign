@@ -71,6 +71,9 @@ body.extras-tv {
 /* GLOW 3D */
 @import url(https://fonts.googleapis.com/css?family=Concert+One);
 
+body.extras-glow3d {
+  overflow: initial;
+}
 #text-glow3d p {
   animation:glow 10s ease-in-out infinite;
 
@@ -383,12 +386,12 @@ body.extras-sky .displayed-text {
 #extras-xbox-container {
   position: absolute;
   top: 50%;
-  left: 0;
+  left: 10%;
   transform: translate(-50%, -50%);
 }
 #extras-xbox-container p { 
   font-size: 40px;
-  margin: 10px 20px;
+  margin: 10px 20px 25px;
   animation: fade 6s linear 1s infinite normal; 
 }
 
@@ -400,9 +403,11 @@ body.extras-sky .displayed-text {
   padding: 10px 13px;
   overflow: hidden;
   width: 114px; /* 610*/
+  top: 50%;
   position: fixed;
   bottom: 10px;
-  animation: open 6s linear 1s infinite normal;    
+  animation: open 6s linear 1s infinite normal;
+  transform: scale(1.2) translateY(-50%);
 }
 
 #extras-xbox-container .circle { 
