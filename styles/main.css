@@ -162,6 +162,8 @@ button.setting-option.unselectable {
 #hide-settings.settings-hidden {
 	border: none;
 	background: transparent;
+	opacity: 0.4;
+	transition: 1.5s;
 }
 .settings-container.hidden >:not(.hide-settings) {
 	visibility: hidden;

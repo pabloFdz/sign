@@ -102,7 +102,6 @@ function toggleBlinkFull() {
 		changeColor();
 		iconBlinkText.setAttribute("onclick", "toggleBlinkText()");
 	}
-	highlightSelectedIcon(iconBlinkFull);
 }
 function startBlinkFull() {
     if (blink) {
@@ -152,7 +151,6 @@ function moveText() {
     else {
         moveCount--;
     }
-    console.log("currentLeftPosition: " + currentLeftPosition + " textMovementWidth: " + textMovementWidth);
 }
 
 /* Font size */
@@ -279,7 +277,6 @@ fontsFamily.forEach((fontFamilyOption) => {
 
 settingsItems.forEach(element => {
   element.addEventListener('click', () => {
-    console.log('Element clicked:', element.id);    
     highlightSelectedIcon(element);
   });
 });

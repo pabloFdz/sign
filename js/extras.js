@@ -39,12 +39,9 @@ function extras(type) {
 //////////////
 function extrasTV() {
 	toggleBodyClass("extras-tv");
-	
 }
 //////////////
 function extrasNeon() {
-	
-
 	if (statusNeon) {
 		extrasNeonDisable();
 		return;
@@ -57,17 +54,17 @@ function extrasNeon() {
 	textGlow3D.style.display = "none";
 	chooseElement("text-neon");
 
-	let loopLength = textToDisplay.value.length;
-	let text = textToDisplay.value;
 	let newText = "";
+	let text = textToDisplay.value;
+	let loopLength = textToDisplay.value.length;
 
 	for(let i = 1; i <= loopLength; i++) {		
 		let randomNumber = Math.floor(Math.random() * 10);
 		if (randomNumber % 2 === 0) {
-			newText+="<span>" + text.slice(0, 1) + "</span>";
+			newText += "<span>" + text.slice(0, 1) + "</span>";
 		}
 		else {
-			newText +="<b>" + text.slice(0, 1) + "</b>";
+			newText += "<b>" + text.slice(0, 1) + "</b>";
 		}
 		
 		text = text.substring(1);
@@ -82,7 +79,6 @@ function extrasNeonDisable() {
 	textNeon.style.display = "none";
 	textGlow3D.style.display = "none";
 	statusNeon = false;
-	
 }
 //////////////
 function extrasGlow3D() {
