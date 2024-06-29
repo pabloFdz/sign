@@ -5,6 +5,7 @@ const textStatic = document.getElementById("text-static");
 const textNeon = document.getElementById("text-neon");
 const textGlow3D = document.getElementById("text-glow3d");
 
+const textToDisplayContainer = document.getElementById("text-to-display-container");
 const changeFontFamilyContainer = document.getElementById("font-selector-container");
 const fontsFamily = document.querySelectorAll('[attr-font]');
 const inputFontColor = document.getElementById("font-color-to-display");
@@ -52,7 +53,16 @@ let element = textStatic;
 let moveCount = 100;
 
 function writeAction() {
-	textToDisplay.focus();
+	if (textToDisplayContainer.style.display === "none") {
+		textToDisplayContainer.style.display = "block";
+		blur.style.display = "block";
+	}
+	else {
+		textToDisplayContainer.style.display = "none";
+		blur.style.display = "none";
+	}
+
+	highlightSelectedIcon(iconFontFamily);
 }
 
 function toggleMainSettings() {
@@ -296,11 +306,12 @@ settingsItems.forEach(element => {
 
 /* REVIEWED OK */
 blur.addEventListener("click",(event)=>{
-	if (colorPicker.style.display !== "none" || changeFontFamilyContainer.style.display !== "none" || mainSettings.style.display !== "none") {
+	if (colorPicker.style.display !== "none" || changeFontFamilyContainer.style.display !== "none" || mainSettings.style.display !== "none" || textToDisplayContainer.style.display !== "none") {
 		colorPicker.style.display = "none";
 		blur.style.display = "none";
 		changeFontFamilyContainer.style.display = "none";
 		mainSettings.style.display = "none";
+		textToDisplayContainer.style.display = "none";
 	}
 });
 iconColorPickerFont.addEventListener("click",(event)=>{

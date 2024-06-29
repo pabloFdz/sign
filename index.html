@@ -121,8 +121,7 @@
 
 		<hr>
 
-		<button id="text-button" onclicl="writeAction" class="material-icons setting-option portrait-hide unselectable">textsms</button>
-		<input id="text-to-display" class="portrait-hide" type="text" placeholder="Type here..." value="Hello!">
+		<button id="text-button" onclick="writeAction()" class="material-icons setting-option portrait-hide unselectable">textsms</button>
 
 		<hr>
 		
@@ -147,6 +146,10 @@
 		
 	</div>
 
+	<div id="text-to-display-container" style="display: none">
+		<p>Write your message here:</p>
+		<input id="text-to-display" class="portrait-hide" type="text" placeholder="Type here..." value="Hello!">
+	</div>
 
 	<div id="blur" style="display: none"></div>
 	<div id="font-selector-container" style="display: none">
