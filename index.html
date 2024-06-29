@@ -359,7 +359,7 @@
 				<feTile x="0" y="0" width="10000" height="10000" in="image" result="tile1"></feTile>
 				<feComposite in="morphology" in2="tile1" operator="in" result="composite3"></feComposite>
 
-				<feGaussianBlur stdDeviation="25" in="composite3" result="blur3" />
+				<feGaussianBlur stdDeviation="5" in="composite3" result="blur3" />
 
 				<feBlend mode="screen" in="blur3" in2="composite3" result="blend" />
 

@@ -56,6 +56,7 @@ function writeAction() {
 	if (textToDisplayContainer.style.display === "none") {
 		textToDisplayContainer.style.display = "block";
 		blur.style.display = "block";
+		document.getElementById("text-to-display").focus();
 	}
 	else {
 		textToDisplayContainer.style.display = "none";
