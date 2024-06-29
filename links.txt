@@ -14,6 +14,12 @@ const rect = $0.getBoundingClientRect();
 console.log("Width: " + rect.width + "px");
 
 
+https://fonts.google.com/specimen/Monofett?classification=Monospace
+https://fonts.google.com/specimen/Syne+Mono?classification=Monospace
+https://fonts.google.com/specimen/VT323?classification=Monospace
+https://fonts.google.com/specimen/Tiny5
+https://fonts.google.com/specimen/Sedgwick+Ave+Display?query=display
+
 
 
 https://fonts.google.com/icons?icon.size=24&icon.color=%23e8eaed

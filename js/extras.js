@@ -5,6 +5,7 @@ const CANDLE = "candle";
 const SPARKS = "sparks";
 const SKY = "sky";
 const XBOX = "xbox";
+const LED = "led";
 
 let statusNeon = false;
 
@@ -30,6 +31,9 @@ function extras(type) {
 	  	break;
 	  case XBOX:
 	  	extrasXbox();
+	  	break;
+	  case LED:
+	  	extrasLed();
 	  	break;
 	  default:
 	    break;
@@ -134,6 +138,20 @@ function extrasXbox() {
 	}
 	else {
 		xbox.style.display = "none";
+	}
+}
+//////////////
+function extrasLed() {
+	let led = document.getElementById("extras-led-container");
+
+	if (led.style.display === "none") {
+		textStatic.classList.add("track");
+		led.style.display = "block";
+		sizeInputHandler();
+	}
+	else {
+		led.style.display = "none";
+		textStatic.classList.remove("track");
 	}
 }
 

@@ -51,6 +51,9 @@ let settingsHidden = false;
 let element = textStatic;
 let moveCount = 100;
 
+function writeAction() {
+	textToDisplay.focus();
+}
 
 function toggleMainSettings() {
 	if (mainSettings.style.display === "none") {
@@ -142,12 +145,14 @@ function moveTextStart() {
 	textMovementInterval = setInterval(moveText, 20);
 	body.classList.add(bodyClass);
 	iconTextStatic.innerHTML = "stop_circle";
+	textStatic.classList.add("movement");
 }
 function moveTextStop() {
 	clearInterval(textMovementInterval);
 	body.classList.remove(bodyClass);
 	textStatic.style.left = "";
 	iconTextStatic.innerHTML = "play_circle";
+	textStatic.classList.remove("movement");
 }
 
 function moveText() {

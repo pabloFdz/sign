@@ -77,13 +77,14 @@
 	</div>
 
 	<div id="settings-top" class="settings-container">
+		<button id="icon-main-settings" onclick="toggleMainSettings()" class="material-icons setting-option portrait-hide unselectable">tune</button>
+
+		<hr>
+
 		<button id="background-color" class="material-icons setting-option portrait-hide unselectable">format_color_fill</button>
 
 		<hr>
 
-		<button id="text-movement" onclick="enableStatic()" class="stopped material-icons setting-option">play_circle</button>
-
-		<hr>
 		<!-- 
 			<button class="material-icons setting-option"></button>
 			highlight
@@ -97,11 +98,13 @@
 		<!-- contrast -->
 		<hr>
 
+		<button id="extras-led" onclick="extras('led')" class="material-icons setting-option">blur_on</button>
+		<hr>
+
 		<button id="extras-tv" onclick="extras('tv')" class="material-icons setting-option no-offline">tv</button>
-		<button id="extras-neon" onclick="extras('neon')" class="material-icons setting-option no-offline">flare</button>
-		<button id="extras-glow3d" onclick="extras('glow3d')" class="material-icons setting-option no-offline">3d_rotation</button>
+		
 		<button id="extras-candle" onclick="extras('candle')" class="material-icons setting-option no-offline">cake</button>
-		<button id="extras-sparks" onclick="extras('sparks')" class="material-icons setting-option no-offline">auto_awesome</button>
+
 		<button id="extras-sky" onclick="extras('sky')" class="material-icons setting-option no-offline">nights_stay</button>
 		<button id="extras-xbox" onclick="extras('xbox')" class="material-icons setting-option no-offline">sports_esports</button>
 
@@ -112,15 +115,14 @@
 			<button id="hide-settings" onclick="hideSettingsBar()" class="material-icons setting-option">visibility_off</button>
 		</div>
 
-		<button id="icon-main-settings" onclick="toggleMainSettings()" class="material-icons setting-option portrait-hide unselectable">tune</button>
-
-		<hr>
-
-		<input id="text-to-display" class="portrait-hide" type="text" placeholder="Type here..." value="Hello!">
-		
 		<hr>
 		
 		<button id="font-color" class="material-icons setting-option portrait-hide unselectable">palette</button>
+
+		<hr>
+
+		<button id="text-button" onclicl="writeAction" class="material-icons setting-option portrait-hide unselectable">textsms</button>
+		<input id="text-to-display" class="portrait-hide" type="text" placeholder="Type here..." value="Hello!">
 
 		<hr>
 		
@@ -128,10 +130,20 @@
 
 		<hr>
 		
-		<button id="font-magnify" onclick="fontMagnify()" class="material-icons setting-option portrait-hide unselectable">text_increase</button>
 		<button id="font-reduce" onclick="fontReduce()" class="material-icons setting-option portrait-hide unselectable">text_decrease</button>
+		<button id="font-magnify" onclick="fontMagnify()" class="material-icons setting-option portrait-hide unselectable">text_increase</button>
 
-		
+		<hr>
+
+		<button id="text-movement" onclick="enableStatic()" class="stopped material-icons setting-option">play_circle</button>
+
+		<hr>
+
+		<button id="extras-neon" onclick="extras('neon')" class="material-icons setting-option no-offline">flare</button>
+
+		<button id="extras-sparks" onclick="extras('sparks')" class="material-icons setting-option no-offline">auto_awesome</button>
+
+		<button id="extras-glow3d" onclick="extras('glow3d')" class="material-icons setting-option no-offline">3d_rotation</button>
 		
 	</div>
 
@@ -255,6 +267,8 @@
 
 	<div id="background"></div>
 	
+	<div id="background-led"></div>
+
 	<div id="typed">
 		<p id="text-static" class="display-text displayed-text">Hello!</p>
 		<p id="text-neon" class="display-text displayed-text" style="display: none"></p>
@@ -316,12 +330,59 @@
 
 
 
+	
+	<div class="tool-bar" style="display: none;">
+		<details>
+			<summary>🔧</summary>
 
+			<label for="sizeInput">Dots Size</label>
+			<input type="range" min="4" max="40" value="16" id="sizeInput">
 
+			<label for="canvaSizeInput">Screen Size</label>
+			<input type="range" min="80" max="512" value="320" id="canvaSizeInput">
 
+		</details>
+	</div>
+	
+	<div id="extras-led-container" style="display: none">
+		<svg style="position: fixed;" xmlns='http://www.w3.org/2000/svg'>
+			<filter id="led-screen">
+				<feFlood id="filterPxl" x="7" y="7" width="2" height="2" result="flood"></feFlood>
+				<feComposite id="filterCs" in="flood" in2="flood" operator="over" x="0" y="0" width="16" height="16" result="composite"></feComposite>
+				<feTile x="0" y="0" width="10000" height="10000" in="composite" result="tile"></feTile>
+				<feComposite in="SourceGraphic" in2="tile" operator="in"></feComposite>
+				<feMorphology id="filterMorph" operator="dilate" radius="7" in="composite2" result="morphology"></feMorphology>
+				<feImage id="filterCsImg" xlink:href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse ry='25' rx='25' id='svg_1' cy='50' cx='50' /%3E%3C/svg%3E" x="0" y="0" width="16" height="16" preserveAspectRatio="xMidYMid meet" crossorigin="anonymous" result="image"></feImage>
+				<feTile x="0" y="0" width="10000" height="10000" in="image" result="tile1"></feTile>
+				<feComposite in="morphology" in2="tile1" operator="in" result="composite3"></feComposite>
 
+				<feGaussianBlur stdDeviation="25" in="composite3" result="blur3" />
 
+				<feBlend mode="screen" in="blur3" in2="composite3" result="blend" />
 
+				<feComposite in="blend" in2="composite3" operator="over" result="composite5"></feComposite>
+
+				<!-- 	Canva	 -->
+				<feFlood flood-color="#000" id="canva" result="flood1"></feFlood>
+				<feMerge result="merge">
+					<feMergeNode in="flood1"></feMergeNode>
+					<feMergeNode in="composite6"></feMergeNode>
+					<feMergeNode in="composite5"></feMergeNode>
+				</feMerge>
+
+			</filter>
+			<filter id="8bit-color" color-interpolation-filters="sRGB">
+				<feComponentTransfer>
+					<feFuncR type="discrete" tableValues="0 0.125 0.251 0.376 0.502 0.627 0.753 0.878" />
+					<feFuncG type="discrete" tableValues="0 0.125 0.251 0.376 0.502 0.627 0.753 0.878" />
+					<feFuncB type="discrete" tableValues="0 0.251 0.502 0.753" />
+					<feFuncA type="identity" />
+				</feComponentTransfer>
+			</filter>
+		</svg>
+		<div id="movableDiv" class="filter"></div>
+		<div class="shadow"></div>
+	</div>
 
 
 	<div id="extras-sky-container" style="display: none">
@@ -386,6 +447,7 @@
 	<script type="text/javascript" src="js/colorpicker.js"></script>
 	<script type="text/javascript" src="js/extras.js"></script>
 	<script type="text/javascript" src="js/extras_sparks.js"></script>
+	<script type="text/javascript" src="js/extras_led.js"></script>
 	<!-- <script type="text/javascript" src="js/extras_neonmatrix.js"></script> -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.3.0/tinycolor.min.js"></script>
 	<link src="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
