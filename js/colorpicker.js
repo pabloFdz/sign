@@ -164,6 +164,7 @@ function setCurrentColor(color){
   }
   if (elementToChange === "background") {
     body.style.backgroundColor = color;
+    document.getElementById("theme-color").setAttribute("content", color)
     currentBackgroundColor = color;
   }
 

@@ -508,8 +508,8 @@ body.extras-sky .displayed-text {
   // border-radius: 50%;
   top: 0%;
   left: 0%;
-  backdrop-filter: url(#led-screen);
-  box-shadow: var(--shadow-elevation-high);
+/*  backdrop-filter: url(#led-screen);
+  box-shadow: var(--shadow-elevation-high);*/
 
 
   z-index: 9;
@@ -539,13 +539,13 @@ body.extras-sky .displayed-text {
 }
 
 html {
-  --surface: hsl(200 10% 10%);
+/*  --surface: hsl(200 10% 10%);
   --text: hsl(200 5% 80%);
   --hero-h: calc(100vh - 40px);
 
   background-color: var(--surface);
   color: var(--text);
-  block-size: 100%;
+  block-size: 100%;*/
 }
 
 .track {

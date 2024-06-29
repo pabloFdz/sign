@@ -145,13 +145,13 @@ function extrasLed() {
 	let led = document.getElementById("extras-led-container");
 
 	if (led.style.display === "none") {
-		textStatic.classList.add("track");
+		//textStatic.classList.add("track");
 		led.style.display = "block";
 		sizeInputHandler();
 	}
 	else {
 		led.style.display = "none";
-		textStatic.classList.remove("track");
+		//textStatic.classList.remove("track");
 	}
 }
 

@@ -153,14 +153,16 @@ function enableStatic(force = false) {
 }
 let textMovementInterval;
 function moveTextStart() {
-	textMovementInterval = setInterval(moveText, 20);
+	//textMovementInterval = setInterval(moveText, 20);
 	body.classList.add(bodyClass);
+	textStatic.classList.add('track');
 	iconTextStatic.innerHTML = "stop_circle";
 	textStatic.classList.add("movement");
 }
 function moveTextStop() {
-	clearInterval(textMovementInterval);
+	//clearInterval(textMovementInterval);
 	body.classList.remove(bodyClass);
+	textStatic.classList.remove('track');
 	textStatic.style.left = "";
 	iconTextStatic.innerHTML = "play_circle";
 	textStatic.classList.remove("movement");
