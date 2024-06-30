@@ -164,8 +164,14 @@ function setCurrentColor(color){
   }
   if (elementToChange === "background") {
     body.style.backgroundColor = color;
-    document.getElementById("theme-color").setAttribute("content", color)
     currentBackgroundColor = color;
+
+    //EXTRAS
+    document.getElementById("theme-color").setAttribute("content", color); //iphone
+    let portalCurtains = document.getElementsByClassName("curtain");
+    for (let i = 0; i < portalCurtains.length; i++) {
+      portalCurtains[i].style.background = color;
+    }
   }
 
   spectrumCursor.style.backgroundColor = color; 

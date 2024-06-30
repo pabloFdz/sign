@@ -6,6 +6,8 @@ const SPARKS = "sparks";
 const SKY = "sky";
 const XBOX = "xbox";
 const LED = "led";
+const RAIN = "rain";
+const PORTAL = "portal";
 
 let statusNeon = false;
 
@@ -35,6 +37,13 @@ function extras(type) {
 	  case LED:
 	  	extrasLed();
 	  	break;
+	  case RAIN:
+	  	extrasRain();
+	  	break;
+	  case PORTAL:
+	  	extrasPortal();
+	  	break;
+
 	  default:
 	    break;
 	}	
@@ -85,9 +94,18 @@ function extrasNeonDisable() {
 }
 //////////////
 function extrasGlow3D() {
-	textStatic.style.display = "none";
-	textNeon.style.display = "none";
-	textGlow3D.style.display = "block";
+	let glow3d = document.getElementById("text-glow3d");
+
+	if (glow3d.style.display === "none") {
+		textStatic.style.display = "none";
+		textNeon.style.display = "none";
+		textGlow3D.style.display = "block";
+	}
+	else {
+		textStatic.style.display = "block";
+		textNeon.style.display = "block";
+		textGlow3D.style.display = "none";
+	}	
 	
 	toggleBodyClass('extras-glow3d');
 }
@@ -135,9 +153,11 @@ function extrasXbox() {
 
 	if (xbox.style.display === "none") {
 		xbox.style.display = "block";
+		textStatic.style.display = "none";
 	}
 	else {
 		xbox.style.display = "none";
+		textStatic.style.display = "block";
 	}
 }
 //////////////
@@ -145,13 +165,35 @@ function extrasLed() {
 	let led = document.getElementById("extras-led-container");
 
 	if (led.style.display === "none") {
-		//textStatic.classList.add("track");
 		led.style.display = "block";
 		sizeInputHandler();
 	}
 	else {
 		led.style.display = "none";
-		//textStatic.classList.remove("track");
+	}
+}
+//////////////
+function extrasRain() {
+	let rain = document.getElementById("extras-rain-container");
+
+	if (rain.style.display === "none") {
+		rain.style.display = "block";
+	}
+	else {
+		rain.style.display = "none";
+	}
+}
+//////////////
+function extrasPortal() {
+	let portal = document.getElementById("extras-portal-container");
+
+	if (portal.style.display === "none") {
+		portal.style.display = "block";
+		textStatic.style.display = "none";
+	}
+	else {
+		portal.style.display = "none";
+		textStatic.style.display = "block";
 	}
 }
 

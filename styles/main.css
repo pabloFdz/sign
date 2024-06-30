@@ -19,7 +19,13 @@ body {
 	font-family: "Open Sans", no-serif;
 	overscroll-behavior-y: contain;
 
-	user-select: none
+	user-select: none;
+
+	background: #1F232A;
+	color: #8B949A; 
+
+	background-image: url("../vec.svg") !important;
+	background-size: cover;
 }
 img {
 	width: auto;

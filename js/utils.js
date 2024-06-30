@@ -14,9 +14,6 @@ function highlightSelectedIcon(element) {
 		element.classList.add("selected");
 	}
 }
-function removeHighlightedIcon(element) {
-	element.classList.remove("selected");
-}
 function chooseElement(element) {
 	element = document.getElementById(element);
 }

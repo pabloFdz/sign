@@ -1,4 +1,4 @@
-body {
+/*body {
   background: rgba(91, 55, 183, 1);
   font-family: 'Lato', sans-serif;
   
@@ -12,7 +12,7 @@ body {
   margin: 0;
   min-height: 100vh;
 }
-
+*/
 .tab-nav-container {
   position: absolute;
   bottom: 0;

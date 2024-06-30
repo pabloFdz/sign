@@ -109,6 +109,8 @@
 
 		<button id="extras-sky" onclick="extras('sky')" class="material-icons setting-option no-offline">nights_stay</button>
 		<button id="extras-xbox" onclick="extras('xbox')" class="material-icons setting-option no-offline">sports_esports</button>
+		<button id="extras-rain" onclick="extras('rain')" class="material-icons setting-option no-offline">umbrella</button>
+		<button id="extras-portal" onclick="extras('portal')" class="material-icons setting-option no-offline">animation</button>
 
 	</div>
 
@@ -127,7 +129,7 @@
 
 		<hr>
 		
-		<button id="font-selector" onclick="fontFamilyChange()" class="material-icons setting-option portrait-hide">text_fields</button>
+		<button id="font-selector" onclick="fontFamilyChange()" class="material-icons setting-option portrait-hide unselectable">text_fields</button>
 
 		<hr>
 		
@@ -311,6 +313,9 @@
 		</div>
 		<canvas id="canvas-sparks"></canvas>
 	</div>
+	<div id="extras-rain-container" style="display: none">
+		<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+	</div>
 	<div id="extras-xbox-container" style="display: none">
 		<div class="content">
 		  
@@ -331,6 +336,35 @@
 		  </div>
 		  
 		 </div>
+	</div>
+
+	<div id="extras-portal-container" style="display: none;">
+		<div class="curtain left"></div>
+		<div class="curtain right"></div>
+
+		<div class="portal left"></div>
+		<div class="portal right"></div>
+
+
+		<p id="text-static-ufo" class="text-static-ufo display-text displayed-text">Hello!</p>
+
+<!-- 		<div class="ufo">
+			
+			<div class="kirby">
+				<div class="kirby-eyes"></div>
+				<div class="kirby-eyes"></div>
+			</div>
+
+			<div class="ufo-body"></div>
+
+			<div class="wrap">
+				<div class="ufo-light"></div>
+				<div class="ufo-light"></div>
+				<div class="ufo-light"></div>
+			</div>
+
+		</div> -->
+
 	</div>
 
 
