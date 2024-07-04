@@ -86,8 +86,6 @@ body.extras-glow3d {
 
 #text-glow3d {
   position: absolute;
-  width: 200%;
-  height: 200%;
   top: 0;
   z-index: 5
 }
@@ -106,8 +104,8 @@ body.extras-glow3d {
 
 #text-glow3d p {
   width: 100%;
-  padding: 40px;
-  line-height: 1.5;
+  padding: 0;
+  margin: 0;
   font: 900 8em 'Concert One', sans-serif;
   position: absolute;
 }
