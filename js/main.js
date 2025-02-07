@@ -99,7 +99,7 @@ function startBlinkText() {
         blink = false;
     }
     else {
-       	element.style.color = currentBackgroundColor;
+       	element.style.color = "transparent";
         blink = true;
     }
 }

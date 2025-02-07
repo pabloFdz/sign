@@ -24,9 +24,7 @@ self.addEventListener('install', function(event) {
     caches.open(CACHE).then(function(cache) {
       return cache.addAll([
         // your list of cache keys to store in cache
-        '*.*',
-        //'vendor.bundle.js',
-        // etc.
+        '*.*'
       ])
     })
   );

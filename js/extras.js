@@ -154,10 +154,11 @@ function extrasXbox() {
 	if (xbox.style.display === "none") {
 		xbox.style.display = "block";
 		textStatic.style.display = "none";
+		textStatic.classList.add("xbox");
 	}
 	else {
 		xbox.style.display = "none";
-		textStatic.style.display = "block";
+		textStatic.classList.remove("xbox");
 	}
 }
 //////////////

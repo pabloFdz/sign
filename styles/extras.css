@@ -305,6 +305,7 @@ canvas {
   left: 0;
   width:100vw;
   height:100vh;
+  z-index: 9;
 }
 
 /* SKY */
@@ -384,6 +385,9 @@ body.extras-sky .displayed-text {
  
 
 /*XBOX Achievement */
+.xbox {
+  display: none;
+}
 #extras-xbox-container {
   position: absolute;
   top: 50%;

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>LED Sign</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<meta name="theme-color" content="#020392" id="theme-color">
 
@@ -12,8 +12,6 @@
 	<link rel="stylesheet" type="text/css" href="styles/colorpicker.css">
     
     <link rel="manifest" href="manifest.json" />
-
-	
 </head>
 <body class="arial">
 	<script>
@@ -36,19 +34,19 @@
 		<div id="text-effects" style="display: none">
 			<input type="text" placeholder="Type here..." value="Hello!">
 			<button id="enable-static" onclick="enableStatic()" class="stopped material-icons setting-option">stop_circle</button>
-			<button id="enable-marquee" onclick="enableMarquee()" class="material-icons setting-option">play_circle</button>	
+			<button id="enable-marquee" onclick="enableMarquee()" class="material-icons setting-option">play_circle</button>
 		</div>
 		<div id="text-background" style="display: none">
 			<input type="text" placeholder="Type here..." value="Hello!">
 			<button id="enable-static" onclick="enableStatic()" class="stopped material-icons setting-option">stop_circle</button>
-			<button id="enable-marquee" onclick="enableMarquee()" class="material-icons setting-option">play_circle</button>	
+			<button id="enable-marquee" onclick="enableMarquee()" class="material-icons setting-option">play_circle</button>
 		</div>
 		<div id="text-profile" style="display: none">
 			<input type="text" placeholder="Type here..." value="Hello!">
 			<button id="enable-static" onclick="enableStatic()" class="stopped material-icons setting-option">stop_circle</button>
-			<button id="enable-marquee" onclick="enableMarquee()" class="material-icons setting-option">play_circle</button>	
+			<button id="enable-marquee" onclick="enableMarquee()" class="material-icons setting-option">play_circle</button>
 		</div>
-		
+
 
 		<div class="tab-nav-container-background">
 			<div class="tab">
@@ -74,18 +72,14 @@
 		        <p class="tab-title">Profile</p>
 		    </div>
 		</div>
-		
-		
+
+
 	</div>
 
 	<div id="settings-top" class="settings-container">
-		<button id="icon-main-settings" onclick="toggleMainSettings()" class="material-icons setting-option portrait-hide unselectable">tune</button>
+<!--		<button id="icon-main-settings" onclick="toggleMainSettings()" class="material-icons setting-option portrait-hide unselectable">tune</button>-->
 
-		<hr>
-
-		<button id="background-color" class="material-icons setting-option portrait-hide unselectable">format_color_fill</button>
-
-		<hr>
+<!--		<hr>-->
 
 		<!-- 
 			<button class="material-icons setting-option"></button>
@@ -103,9 +97,17 @@
 		<button id="extras-led" onclick="extras('led')" class="material-icons setting-option">blur_on</button>
 		<hr>
 
+		<button id="extras-neon" onclick="extras('neon')" class="material-icons setting-option no-offline">flare</button>
+
+		<button id="extras-sparks" onclick="extras('sparks')" class="material-icons setting-option no-offline">auto_awesome</button>
+
+		<button id="extras-glow3d" onclick="extras('glow3d')" class="material-icons setting-option no-offline">3d_rotation</button>
+
+		<hr>
+
 		<button id="extras-tv" onclick="extras('tv')" class="material-icons setting-option no-offline">tv</button>
 		
-		<button id="extras-candle" onclick="extras('candle')" class="material-icons setting-option no-offline">cake</button>
+<!--		<button id="extras-candle" onclick="extras('candle')" class="material-icons setting-option no-offline">cake</button>-->
 
 		<button id="extras-sky" onclick="extras('sky')" class="material-icons setting-option no-offline">nights_stay</button>
 		<button id="extras-xbox" onclick="extras('xbox')" class="material-icons setting-option no-offline">sports_esports</button>
@@ -120,8 +122,13 @@
 		</div>
 
 		<hr>
+
+		<button id="text-movement" onclick="enableStatic()" class="stopped material-icons setting-option">play_circle</button>
+
+		<hr>
 		
 		<button id="font-color" class="material-icons setting-option portrait-hide unselectable">palette</button>
+		<button id="background-color" class="material-icons setting-option portrait-hide unselectable">format_color_fill</button>
 
 		<hr>
 
@@ -135,19 +142,6 @@
 		
 		<button id="font-reduce" onclick="fontReduce()" class="material-icons setting-option portrait-hide unselectable">text_decrease</button>
 		<button id="font-magnify" onclick="fontMagnify()" class="material-icons setting-option portrait-hide unselectable">text_increase</button>
-
-		<hr>
-
-		<button id="text-movement" onclick="enableStatic()" class="stopped material-icons setting-option">play_circle</button>
-
-		<hr>
-
-		<button id="extras-neon" onclick="extras('neon')" class="material-icons setting-option no-offline">flare</button>
-
-		<button id="extras-sparks" onclick="extras('sparks')" class="material-icons setting-option no-offline">auto_awesome</button>
-
-		<button id="extras-glow3d" onclick="extras('glow3d')" class="material-icons setting-option no-offline">3d_rotation</button>
-		
 	</div>
 
 	<div id="text-to-display-container" style="display: none">

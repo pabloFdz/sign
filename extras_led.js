@@ -56,7 +56,6 @@ function changeSize(size) {
 	const pxl = size % 2 == 0 ? 2 : 1;
 	const shift = (size - pxl) / 2;
 	console.clear();
-	console.log(size, pxl, shift);
 
 	filterMorph.setAttribute("radius", (shift - size * 0.04).toString());
 

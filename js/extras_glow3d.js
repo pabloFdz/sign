@@ -50,7 +50,7 @@ window.onload = function() {
   /* listen to the touchmove event,
   every time it fires, grab the location
   of touch and assign it to box */
-  console.log(window.event.clientX)
+  //console.log(window.event.clientX)
   box.addEventListener('touchmove', function(e) {
     // grab the location of touch
     var touchLocation = e.targetTouches[0];

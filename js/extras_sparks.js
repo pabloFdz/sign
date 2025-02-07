@@ -170,7 +170,7 @@ class TextSparks
 
     secLog(log, timesPerFrame) {
         if(Math.random() < 1 / 60 / timesPerFrame) {
-            console.log(log);
+            //console.log(log);
         }
     }
 
