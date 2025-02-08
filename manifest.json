@@ -1,7 +1,7 @@
 {
   "name": "LED Sign",
   "short_name": "LED Sign",
-  "start_url": "https://pablofdz.github.io/sign/",
+  "start_url": "https://sign-7kk.pages.dev/",
   "icons": [
     {
       "src": "icons/512.png",
@@ -10,8 +10,7 @@
     }
   ],
   "theme_color": "#8b949a",
-  "background_color": "#1f232a",
-  "short_name": "LED Sign",
+  "background_color": "#481a40",
   "id": "salmonjump_led",
   "description": "The best LED Sign",
   "display": "fullscreen",
