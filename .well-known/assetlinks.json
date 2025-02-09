@@ -1,0 +1,11 @@
+[ 
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.salmonjump.lino",
+      "sha256_cert_fingerprints":
+      ["C8:7D:4F:CA:D0:A0:B7:AD:E6:A0:96:F6:84:C6:90:50:A6:49:6B:4E:99:3A:24:73:BD:12:2C:4C:27:BC:B0:7A"]
+    }
+  }
+]
