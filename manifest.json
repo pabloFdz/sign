@@ -1,10 +1,10 @@
 {
   "name": "LED Sign",
   "short_name": "LED Sign",
-  "start_url": "https://sign-7kk.pages.dev/",
+  "start_url": "https://ledsign.salmonjump.com/",
   "icons": [
     {
-      "src": "icons/512.png",
+      "src": "icons/led_sign512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
